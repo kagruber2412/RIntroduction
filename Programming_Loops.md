@@ -1,12 +1,9 @@
 ---
 title: "Programming 2: Loops"
-date: '`r format(Sys.time(), "%d %B, %Y")`'
-output: html_document:
+author: "Kathrin Gruber"
+date: ""
+output: pdf_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Definition
 
