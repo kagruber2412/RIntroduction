@@ -1,11 +1,8 @@
 ---
 title: "Training Exercises: Writting Functions"
-output: html_document
+author: Kathrin Gruber
+output: pdf_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## 1. Sum of three largest values.
 
