@@ -110,9 +110,9 @@ result
 3. Write a `for-loop` to apply the function `one.sample` from Lesson 7 to `Achievement`, `Facebookhours` and `No.Friends`.
 
 ```{r eval=FALSE, include=FALSE}
-result <- vector("double", length=4)
-result <- unlist(list(NULL))
-result <- vector()
+result <- vector("double", length=4). # Version 1
+result <- unlist(list(NULL)).         # Version 2
+result <- vector()                    # Version 3
 for(i in 2:dim(data)[2]){
   result[i] <- t.test(data[,i])$statistic
 }
