@@ -5,10 +5,6 @@ date: ""
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Data import
 
 ## Step 1: Prepartion
