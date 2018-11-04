@@ -185,7 +185,7 @@ RANGE(data$Facebookhours)            # call the user defined funtion `RANGE` on 
 1. Write a function `one.sample` to calculate a `one-sample t-statistic` (see https://en.wikipedia.org/wiki/Student%27s_t-test) to test the null hypothesis that the population mean  is `x`, where `x` can be specified by the user.
 2. Apply this function to `Achievement`, `Facebookhours` and `No.Friends`.
 
-Note: the formula is $(\bar{y} - x) / (\hat{\sigma}_y/\sqrt{n_y})$
+Note: the formula is $(\bar{y} - x) / (\hat{\sigma}_y / \sqrt{n_y})$
 
 ```{r}
 one.sample <- function(data=data, x=0){  # takes on two arguments: the data and the population mean x (provided default value 0)
