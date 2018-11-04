@@ -1,6 +1,8 @@
 ---
 title: "Programing 1: Functions"
-output: html_notebook
+author: "Kathrin Gruber"
+date: ""
+output: pdf_document
 ---
 
 ## Definition
@@ -138,7 +140,7 @@ foo(z)
 1. Again, read in the familiar `facebook_data` file from Lesson 2. Assign the file to an object called `data`.
 
 ```{r}
-data <- read.csv2("/Users/kathringruber/Docs/Erasmus/TEACHING/Data_Science/facebook_data.csv")
+data <- read.csv2("facebook_data.csv")
 data
 ```
 
