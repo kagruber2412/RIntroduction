@@ -1,7 +1,7 @@
 ---
 title: "Data import, inspection, processing"
 author: "Kathrin Gruber"
-date: "5 11 2018"
+date: ""
 output: pdf_document
 ---
 
@@ -102,7 +102,7 @@ dat.csv <- read.csv2("<FileName>.csv", dec = ",")
 Checking the structure of the data set
 
 ```{r echo=FALSE}
-facebook_data <- read.csv("~/Docs/Erasmus/TEACHING/Data_Science/facebook_data.csv", sep=";")
+facebook_data <- read.csv("~facebook_data.csv", sep=";")
 ```
 
 
