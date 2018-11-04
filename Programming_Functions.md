@@ -137,7 +137,7 @@ foo(z)
 
 **`Percentages`**
 
-1. Again, read in the familiar `facebook_data` file from Lesson 2. Assign the file to an object called `data`.
+1. Read in the file `facebook_data`. Assign the file to an object called `data`.
 
 ```{r}
 data <- read.csv2("facebook_data.csv")
@@ -169,7 +169,45 @@ percentages(data$Facebookhours) # call the use defined function `percentages` on
 1. Write a function `RANGE` to calculate the spread of the values in the percentage of `Facebookhours` spent per day (Hint: use the functions `min()` and `max()`).
 2. In addition, calculate the `median` of the values within the `RANGE` function. Return both results.
 
+```{r}
+RANGE <- function(x){                # takes on only one argument x (the data)
+  res <- (x/24)*100                  # recycle the result from the previous function, transform data values into percentages
+  spread <- max(res) - min(res)      # calculatae the spread of res (the tranformed data)
+  Median <- median(res)              # calculate the median of res (the transformed data)
+  list(Median=Median, Spread=spread) # Name the elements in the list
+}
+
+RANGE(data$Facebookhours)            # call the user defined funtion `RANGE` on the facebookhours data vector
+```
+
 **`one.sample`**
 
 1. Write a function `one.sample` to calculate a `one-sample t-statistic` (see https://en.wikipedia.org/wiki/Student%27s_t-test) to test the null hypothesis that the population mean  is `x`, where `x` can be specified by the user.
 2. Apply this function to `Achievement`, `Facebookhours` and `No.Friends`.
+
+Note: the formula is $(\bar(y) - x) / (\hat(\sigma_y)/\sqrt(n_y))$
+
+```{r}
+one.sample <- function(data=data, x=0){  # takes on two arguments: the data and the population mean x (provided default value 0)
+  denominator <- sqrt(var(data)/ length(data)) # note sqrt of variance = standard deviation
+  nominator <- mean(data) - x
+  t.value <- nominator/denominator
+  return(t.value)
+}
+
+one.sample(data$Facebookhours)
+```
+
+More advanced (statistical) solution
+```{r}
+one.sample <- function(data=data, x=0){          # takes on two arguments: the data and the population mean x (provided default value 0)
+  denominator <- sqrt(var(data)/ length(data))   # note sqrt of variance = standard deviation
+  nominator <- mean(data) - x
+  t.value <- nominator/denominator
+  df <- length(data)-1                           # calculate the degrees of freedom (n-1)
+  p.value <- 2*pt(t.value, df, lower.tail=FALSE) # calculate the p.value (t.value is t-distributed)
+  list(t.value = t.value, df=df, p.value=p.value)
+}
+
+one.sample(data$Facebookhours)
+```
