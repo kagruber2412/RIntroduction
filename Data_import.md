@@ -87,7 +87,7 @@ dat.csv <- read.csv2("<FileName>.csv", dec = ",")
 - First download the spread sheet onto your local computer and use the import dataset feature of R Studio. 
 - Step 1: Click on the **import** dataset button in the top-right section under the **environment tab**. Select the file you want to import and then click **open**. The import dataset dialog will appear as in the example shown below:
 
-![](./ReadinData.png)
+![](./Ressources/ReadinData.png)
 
 - Step 2: Setting up the preferences of separator, name and other parameters, click on the **import** button. The dataset will be imported in R Studio and assigned to the variable name as set before.
 
