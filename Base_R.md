@@ -38,10 +38,11 @@ Combinations
 c(dbl,dbl)
 ```
 
-Changing the data type of a vector is often called **coercion**. Coercion ensures to maintain the same primitive data type for elements in the same vector.
+**NOTE**:
 ```{r}
 c(dbl, chr)
 ```
+Changing the data type of a vector is often called **coercion**. Coercion ensures to maintain the same primitive data type for elements in the same vector.
 
 ### Vector actions
 
@@ -99,6 +100,7 @@ Vector multiplication (summation of the elements in a and b)
 a * b
 ```
 
+**NOTE**:
 ```{r}
 u <- c(10, 20, 30) 
 v <- c(1, 2, 3, 4, 5, 6, 7, 8, 9) 
@@ -149,6 +151,7 @@ D <- matrix(b, ncol=2, byrow=TRUE)  # matrix with 2 columns, filled-up rowwise
 D
 ```
 
+**NOTE**:
 - How do we know this? `?matrix`
 
 
