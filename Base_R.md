@@ -151,7 +151,6 @@ D <- matrix(b, ncol=2, byrow=TRUE)  # matrix with 2 columns, filled-up rowwise
 D
 ```
 
-**NOTE**:
 - How do we know this? `?matrix`
 
 
