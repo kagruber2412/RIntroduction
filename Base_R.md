@@ -38,12 +38,10 @@ Combinations
 c(dbl,dbl)
 ```
 
-<div class = "blue">
-Changing the data type of a vector is often called <b>coercion</b>. Coercion ensures to maintain the same primitive data type for elements in the same vector.
+Changing the data type of a vector is often called **coercion**. Coercion ensures to maintain the same primitive data type for elements in the same vector.
 ```{r}
 c(dbl, chr)
 ```
-</div>
 
 ### Vector actions
 
@@ -101,14 +99,13 @@ Vector multiplication (summation of the elements in a and b)
 a * b
 ```
 
-<div class = "blue">
 ```{r}
 u <- c(10, 20, 30) 
 v <- c(1, 2, 3, 4, 5, 6, 7, 8, 9) 
 u / v
 ```
-If two vectors are of unequal length, the shorter vector will be <b>recycled</b> in order to match the longer one
-</div>
+If two vectors are of unequal length, the shorter vector will be **recycled** in order to match the longer one
+
 
 ## Matrices
 
@@ -133,12 +130,10 @@ m2
 - Three rows `m2 <- rbind(a, a, b)`
 - Matrix combinations `m <- rbind(m2, m2)`
 
-<div class = "blue">
 ```{r, eval=FALSE}
 m <- cbind(m1,m2)
 ```
 Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
-</div>
 
 Creating a matrix from elements of a vector
 
@@ -154,9 +149,8 @@ D <- matrix(b, ncol=2, byrow=TRUE)  # matrix with 2 columns, filled-up rowwise
 D
 ```
 
-<div class = "blue">
 - How do we know this? `?matrix`
-</div>
+
 
 ### Matrix actions
 
