@@ -132,9 +132,10 @@ m2
 ```{r}
 m <- cbind(m1,m2)
 ```
+**NOTE**:
 Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
 
-Creating a matrix from elements of a vector
+- Creating a matrix from elements of a vector
 
 ```{r}
 b <- c(1, 2, 3, 4)                 # vector with 4 elements
@@ -148,7 +149,7 @@ D <- matrix(b, ncol=2, byrow=TRUE)  # matrix with 2 columns, filled-up rowwise
 D
 ```
 
-- How do we know this? `?matrix`
+How do we know this? `?matrix`
 
 
 ### Matrix actions
@@ -204,6 +205,7 @@ B %*% B
 - Eigenvalues `eigen(B)`
 - Determinant `det(B)`
 
+
 ## Data frames
 
 - Matrix like structures, but columns can have different data types (**data matrices**)
@@ -229,3 +231,6 @@ head(airquality)   # Previewing (the first 6 rows)
 - Number of columns `ncol(airquality)`
 - Dimensions `dim(airquality)`
 - Get the first and third column `airquality[,c(1,3)]` alternative `airquality[,c("Ozone","Wind")]`
+
+
+## Lists
