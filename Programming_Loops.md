@@ -1,8 +1,5 @@
 ---
 title: "Loops"
-author: "Kathrin Gruber"
-date: ""
-layout: none
 ---
 
 ## Definition
@@ -11,13 +8,13 @@ layout: none
 * Runs code repeatedly for each value in the sequence.
 * Automating a multi-step process.
 
-```{r, eval=FALSE}
+```{r}
 for(var in sequence){
   statement
 }
 ```
 
-The variable `var` successively takes on each value in the sequence. For each such value, the code is run with `var` having that value from the sequence.
+The variable `var` authorsuccessively takes on each value in the sequence. For each such value, the code is run with `var` having that value from the sequence.
 
 ### Example: Raise x to the power of x
 
@@ -75,7 +72,7 @@ result
 * If-else statements allows to test a condition and act on it depending on whether it’s `TRUE` or `FALSE`.
 * Allows to test a condition and act on it depending on whether it’s true or false.
 
-```{r, eval=FALSE}
+```{r}
 if(condition) {
   do something
   } else {
@@ -114,7 +111,7 @@ result
 
 3. Write a `for-loop` to apply the function `one.sample` to `Achievement`, `Facebookhours` and `No.Friends`.
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 result <- vector("double", length=4). # Version 1
 result <- unlist(list(NULL)).         # Version 2
 result <- vector()                    # Version 3
@@ -129,7 +126,7 @@ result
 
 1. Write a `for-loop` to calculate the `mean()` for `Achievement`, `Facebookhours`, `No.Friends` (include the `ID` column but substitute it's mean with `0`).
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 result <- vector()
 for(i in 1:dim(data)[2]){
   if(sum(data[,i] / c(1:25))==25){
@@ -145,7 +142,7 @@ result
 
 1. Write a for-loop classifying Achievement as 0 if the value is below the mean and as 1 if the value is above the mean.
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 result <- vector()
 for(i in 1:length(data$Achievement)){
   if(data$Achievement[i] < mean(data$Achievement)) {
@@ -158,7 +155,7 @@ result
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 result <- ifelse(data$Achievement < mean(data$Achievement), 0, 1)
 result
 ```
