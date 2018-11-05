@@ -107,7 +107,7 @@ result
 
 2. Rename the columns in the data frame to `ID`, `Achievement`, `Facebookhours`, `No.Friends`.
 
-3. Write a `for-loop` to apply the function `one.sample` from Lesson 7 to `Achievement`, `Facebookhours` and `No.Friends`.
+3. Write a `for-loop` to apply the function `one.sample` to `Achievement`, `Facebookhours` and `No.Friends`.
 
 ```{r eval=FALSE, include=FALSE}
 result <- vector("double", length=4). # Version 1
