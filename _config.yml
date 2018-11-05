@@ -2,4 +2,4 @@ name: R Introduction
 permalink: pretty
 
 markdown: kramdown
-remote_theme: pmarsceill/just-the-docs
+theme: minima
