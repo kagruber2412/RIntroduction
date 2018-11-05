@@ -3,3 +3,5 @@ permalink: pretty
 
 markdown: kramdown
 theme: minima
+
+math_engine: mathjax
