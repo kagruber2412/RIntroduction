@@ -1,5 +1,8 @@
 ---
 title: "Base R"
+sidebar: toc
+category: getting-started
+order: 2
 ---
 
 # Data types
