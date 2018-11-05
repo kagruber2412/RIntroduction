@@ -3,9 +3,6 @@ permalink: pretty
 paginate: 5
 title: Introduction to R
 description: Programming with R for FAECTOR
-show_downloads: true
-google_analytics:
-
 theme: jekyll-theme-minimal
 
 docs:
