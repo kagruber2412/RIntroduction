@@ -1,6 +1,5 @@
 title: R Introduction for FAECTOR
-author:
-  name: Some Person
+author: Some Person
 permalink: /:title/
 paginate: 1
 theme: minima
