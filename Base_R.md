@@ -153,7 +153,7 @@ D
 
 ### Matrix actions
 
-Checking the number of rows of the `B matrix.
+Checking the number of rows of the `B` matrix.
 ```{r}
 nrow(B)
 ```
