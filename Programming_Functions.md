@@ -1,8 +1,8 @@
 ---
-title: "Programing 1: Functions"
+title: "Functions"
 author: "Kathrin Gruber"
 date: ""
-output: pdf_document
+layout: default
 ---
 
 ## Definition
