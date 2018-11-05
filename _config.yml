@@ -1,7 +1,7 @@
 author: Some Person
 permalink: /:title/
 paginate: 1
-theme: minima
+theme: minimal
 
 plugins:
   - jekyll-sitemap
