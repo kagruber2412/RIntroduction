@@ -1,12 +1,5 @@
 author: Kathrin Gruber
-permalink: pretty
-paginate: 5
+markdown: kramdown
 title: Introduction to R
 description: Programming with R for FAECTOR
 theme: jekyll-theme-minimal
-
-docs:
-  - title: Getting Started
-    children:
-      - title: "A primer on R (and R Studio)"
-        url: 
