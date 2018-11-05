@@ -1,5 +1,8 @@
 ---
 title: "Loops"
+sidebar: toc
+category: Programming
+order: 1
 ---
 
 ## Definition
@@ -98,7 +101,7 @@ result
 
 ## (Useful) Ressources
 
-- https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
+- [R for Beginners](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf)
 
 
 ## Exercises
