@@ -1,5 +1,6 @@
 name: R Introduction
-permalink: pretty
+permalink: /:year-:month-:day-:title/
+paginate: 1
 theme: minima
 lsi: false
 highlighter: rouge
