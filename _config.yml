@@ -8,5 +8,4 @@ paginate: 1
 theme: minima
 
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
