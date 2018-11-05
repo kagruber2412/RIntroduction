@@ -27,12 +27,12 @@ Today, R is probably the most widely used software for research in statistical m
 
 ## Where to obtain R?
 
-(cran.r-project.org)[https://cran.r-project.org]
+[cran.r-project.org](https://cran.r-project.org)
 
 ## (Interesting) ressources 
 
-- (Release statement)[ftp://cran.r-project.org/pub/R/R-release-1.0.0.html]
-- (About R)[https://www.r-project.org/about.html]
+- [Release statement](ftp://cran.r-project.org/pub/R/R-release-1.0.0.html)
+- [About R](https://www.r-project.org/about.html)
 
 
 # R intro
@@ -147,8 +147,8 @@ mean.sunspot[1]
 
 ## (Interesting) ressources
 
-- [R-paper](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
-- [More on R](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
+- (R-paper)[https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf]
+- (More on R)[https://cran.r-project.org/doc/FAQ/R-FAQ.html]
 - `help.start()`
 
 Ways of obtaining help 
@@ -165,7 +165,7 @@ Graphic integrated development environments (IDE):
 - Eclipse with StatET
 - Emacs with ESS
 - Vi, Vim and GVim
-- most commonly used [RStudio](https://www.rstudio.com/)
+- most commonly used (RStudio)[https://www.rstudio.com/]
 
 ## A primer on RStudio
 
