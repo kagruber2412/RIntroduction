@@ -1,8 +1,5 @@
 ---
 title: "Data import"
-author: "Kathrin Gruber"
-date: ""
-layout: output
 ---
 
 # Data import
