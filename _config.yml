@@ -1,11 +1,11 @@
+url: "https://kagruber2412.github.io"
+baseurl: ""
+
 author: Some Person
 permalink: /:title/
 markdown: kramdown
 paginate: 1
 theme: minima
-
-navbar-links:
-  About Me: "aboutme"
 
 plugins:
   - jekyll-paginate
