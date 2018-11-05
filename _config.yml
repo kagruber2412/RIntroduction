@@ -1,18 +1,12 @@
-title: Introduction to programming with R for FAECTOR
 author: Some Person
 permalink: /:title/
+markdown: kramdown
 paginate: 1
 theme: minima
 
 navbar-links:
   About Me: "aboutme"
-  
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
-page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
