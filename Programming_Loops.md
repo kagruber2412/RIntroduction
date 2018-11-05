@@ -99,6 +99,11 @@ for(i in 1:5){
 result
 ```
 
+## (Useful) Ressources
+
+- https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
+
+
 ## Exercises
 
 **`one.sample`**
