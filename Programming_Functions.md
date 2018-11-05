@@ -133,6 +133,10 @@ foo(z, power=y)
 foo(z)
 ```
 
+## Useful Ressources
+
+- https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf
+
 ## Exercises
 
 **`Percentages`**
