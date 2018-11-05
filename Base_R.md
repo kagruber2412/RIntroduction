@@ -1,8 +1,5 @@
 ---
 title: "Base R"
-author: "Kathrin Gruber"
-date: ""
-output: pdf_document
 ---
 
 # Data types
@@ -115,7 +112,7 @@ If two vectors are of unequal length, the shorter vector will be **recycled** in
 - The components in a matrix must be of the same basic type. 
 
 Combining vectors columnwise
-```{r echo=TRUE}
+```{r}
 m1 <- cbind(a, b)   # two columns
 m1
 ```
@@ -132,20 +129,20 @@ m2
 - Three rows `m2 <- rbind(a, a, b)`
 - Matrix combinations `m <- rbind(m2, m2)`
 
-```{r, eval=FALSE}
+```{r}
 m <- cbind(m1,m2)
 ```
 Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
 
 Creating a matrix from elements of a vector
 
-```{r echo=TRUE}
+```{r}
 b <- c(1, 2, 3, 4)                 # vector with 4 elements
 B <- matrix(b, ncol=2)             # matrix with 2 columns, filled-up columnwise
 B
 ```
 
-```{r echo=TRUE}
+```{r}
 b <- c(1, 2, 3, 4)                  # vector with 4 elements
 D <- matrix(b, ncol=2, byrow=TRUE)  # matrix with 2 columns, filled-up rowwise
 D
@@ -157,19 +154,19 @@ D
 ### Matrix actions
 
 Checking the number of rows of the `B matrix.
-```{r echo=TRUE}
+```{r}
 nrow(B)
 ```
 Checking the number of columns of the `B` matrix.
-```{r echo=TRUE}
+```{r}
 ncol(B)
 ```
 Checking the dimension `[nrow, ncol]` of the `B` matrix.
-```{r echo=TRUE}
+```{r}
 dim(B)        
 ```
 Extracting the first row of the `B` vector.
-```{r echo=TRUE}
+```{r}
 B[1,]        
 ```
 Extracting the first column of the `B` vector.
@@ -177,26 +174,26 @@ Extracting the first column of the `B` vector.
 B[,1]        
 ```
 Extracting the first element of the `B` vector.
-```{r echo=TRUE}
+```{r}
 B[1,1]        
 ```
 
 ### Matrix arithmetic
 
 Matrix addition (subtraction)
-```{r echo=TRUE}
+```{r}
 B + B
 ```
 Scalar multiplication
-```{r echo=TRUE}
+```{r}
 B * 2
 ```
 Elementwise multiplication
-```{r echo=TRUE}
+```{r}
 B * B
 ```
 Matrix multiplication
-```{r echo=TRUE}
+```{r}
 B %*% B
 ```
 
