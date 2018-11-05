@@ -30,15 +30,15 @@ cmp <- c(1+0i, 2+4i)              # complex
 chr <- c("a", "b", "c")           # character
 ```
 
-Combinations
+- Concatenating vectors
 ```{r}
 c(dbl,dbl)
 ```
 
-**NOTE**:
 ```{r}
 c(dbl, chr)
 ```
+**NOTE**:
 Changing the data type of a vector is often called **coercion**. Coercion ensures to maintain the same primitive data type for elements in the same vector.
 
 ### Vector actions
@@ -97,12 +97,12 @@ Vector multiplication (summation of the elements in a and b)
 a * b
 ```
 
-**NOTE**:
 ```{r}
 u <- c(10, 20, 30) 
 v <- c(1, 2, 3, 4, 5, 6, 7, 8, 9) 
 u / v
 ```
+**NOTE**:
 If two vectors are of unequal length, the shorter vector will be **recycled** in order to match the longer one
 
 
@@ -111,23 +111,19 @@ If two vectors are of unequal length, the shorter vector will be **recycled** in
 - A matrix is a collection of data elements arranged in a two-dimensional rectangular layout (short: a two-dimensional generalization of vectors). 
 - The components in a matrix must be of the same basic type. 
 
-Combining vectors columnwise
+### Combinations
+
+- columnwise
 ```{r}
 m1 <- cbind(a, b)   # two columns
 m1
 ```
 
-Combining vectors rowwise
+- rowwise
 ```{r}
 m2 <- rbind(a, b)   # two rows
 m2
 ```
-
-**Example tasks**
-
-- Three columns `m1 <- cbind(b, b, a)`
-- Three rows `m2 <- rbind(a, a, b)`
-- Matrix combinations `m <- rbind(m2, m2)`
 
 ```{r}
 m <- cbind(m1,m2)
@@ -135,7 +131,16 @@ m <- cbind(m1,m2)
 **NOTE**:
 Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
 
-- Creating a matrix from elements of a vector
+
+**Example tasks**
+
+- Three columns `m1 <- cbind(b, b, a)`
+- Three rows `m2 <- rbind(a, a, b)`
+- Matrix combinations `m <- rbind(m2, m2)`
+
+### matrix()
+
+Creates a matrix from elements of a vector
 
 ```{r}
 b <- c(1, 2, 3, 4)                 # vector with 4 elements
