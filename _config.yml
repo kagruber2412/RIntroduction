@@ -2,4 +2,4 @@ author: Kathrin Gruber
 markdown: kramdown
 title: Introduction to R
 description: Programming with R for FAECTOR
-theme: jekyll-theme-minimal
+theme: minima
