@@ -1,11 +1,7 @@
 name: R Introduction
 permalink: pretty
 theme: minima
-
 lsi: false
- safe: true
- source: [RIntroduction]
- incremental: false
 highlighter: rouge
 kramdown:
   math_engine: mathjax
