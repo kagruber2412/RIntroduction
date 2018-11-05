@@ -56,14 +56,14 @@ R application (R.app) for Mac OS X
 
 **Example:** Type 2+2 at the R command prompt, and press enter. 
 
-```{r echo=TRUE, prompt=TRUE}
+```{r}
 2 + 2
 ```
 R returns 4 on the console.
 
 - If a command is not complete at the end of a line, R will give a continuation prompt **`+`**, by default.
 
-```{r echo=TRUE, prompt=TRUE}
+```{r}
 2 + 
   2
 ```
@@ -77,7 +77,7 @@ Output can be returned on the console, on the graphic device or to a file.
 - Function consists of the function name `function.name`, the function call `()` and the function arguments `argument1, argument2, argument3, ...`.
 - Arguments can be variables, data, default values or other functions.
 
-```{r, echo=FALSE}
+```{r}
 cat("function.name(argument1 = var.x, argument2 = var.y, argument3 = data, argument4 = TRUE,  ...)")
 ```
 
@@ -86,7 +86,7 @@ cat("function.name(argument1 = var.x, argument2 = var.y, argument3 = data, argum
 
 **Example:** The linear model function `lm()` for fitting a linear regression model.
 
-```{r echo=FALSE}
+```{r}
 cat("lm(formula, data, subset, weights, na.action, method = 'qr', 
     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
     contrasts = NULL, offset, ...) ")
@@ -94,11 +94,11 @@ cat("lm(formula, data, subset, weights, na.action, method = 'qr',
 
 Regressing `Temp` on `Ozone` from R's `airquality` data set (daily air quality measurements in New York, May to September 1973).
 
-```{r echo=TRUE}
+```{r}
 lm(Ozone ~ Temp, airquality)
 ```
 
-```{r echo=TRUE}
+```{r}
 lm(data = airquality, formula = Ozone ~ Temp)
 ```
 
@@ -106,13 +106,13 @@ Both function calls are equivalent. R returns the original function call and the
 
 **Example:** The boxplot function `boxplot()` for producing a box-and-whisker plot.
 
-```{r, echo=FALSE}
+```{r}
 cat("boxplot(x, ..., range = 1.5, width = NULL, varwidth = FALSE, notch = FALSE, outline = TRUE, names, plot = TRUE, border = par('fg'), col = NULL, log = '', pars = list(boxwex = 0.8, staplewex = 0.5, outwex = 0.5), horizontal = FALSE, add = FALSE, at = NULL)")
 ```
 
 Producing a horizontal boxplot in gray of the monthly numbers of sunspots from R's `sunspoth.month` data set. 
 
-```{r echo=TRUE, fig.asp = .5, fig.align = "center"}
+```{r}
 boxplot(sunspot.month, col="gray", horizontal = TRUE)
 ```
 
@@ -200,7 +200,7 @@ Helping text can be putted in the script by comments. Comments can be put almost
 
 **Example:**
 
-```{r echo=TRUE, results=FALSE, eval=FALSE}
+```{r}
 # Regressing Temp on Ozone from R's airquality data set
 lm(data = airquality, formula = Ozone ~ Temp)
 # Producing a horizontal boxplot in gray of the monthly numbers of sunspots from R's sunspoth.month data set. 
@@ -213,7 +213,7 @@ boxplot(sunspot.month, col="gray", horizontal = TRUE)
 - Saving workspace means saving all R objects and commands (can again be accessed via up-arrow and down-arrow keys).
 - Saving and loading can also be done at any time during the R session by the **Environment Tab**.
 
-```{r echo=TRUE, results=FALSE, eval=FALSE}
+```{r}
 save.image(file="workspace.RData")
 ```
 
@@ -223,7 +223,7 @@ save.image(file="workspace.RData")
 - Useful if not all analysis steps are documented.
 - Loading and saving can be done at any time during the R session by the **History Tab**
 
-```{r echo=TRUE, results=FALSE, eval=FALSE}
+```{r}
 savehistory(file = "session.Rhistory")  
 loadhistory(file = "session.Rhistory")  
 ```
