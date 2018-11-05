@@ -1,6 +1,3 @@
-url: "https://kagruber2412.github.io"
-baseurl: ""
-
 author: Some Person
 permalink: /:title/
 markdown: kramdown
