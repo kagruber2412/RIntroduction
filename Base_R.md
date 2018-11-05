@@ -1,5 +1,5 @@
 ---
-title: "Base R"
+title: "Chapter 2: Base R"
 author: "Kathrin Gruber"
 date: ""
 output: pdf_document
