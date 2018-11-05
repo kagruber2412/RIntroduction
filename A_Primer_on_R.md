@@ -2,7 +2,7 @@
 title: "A Primer on R (and RStudio)"
 author: Kathrin Gruber
 date: ''
-layout: none
+layout: default
 ---
 
 # Preface
