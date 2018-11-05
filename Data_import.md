@@ -25,13 +25,13 @@ Once you have your spreadsheets saved, you still need to set your working direct
 started in, and refers to this as the `working directory`. With the following command you can check where your working 
 directory is set at this moment:
 
-```{r eval=FALSE}
+```{r}
 getwd() # get the current working directory
 ```
 
 Then, it could be that you want to change the path that is returned in such a way that it includes the folder where you have stored your dataset:
 
-```{r eval=FALSE}
+```{r}
 setwd("~/Desktop/Rintro") # set working directory to the folder you want to read in/out
 ```
 
@@ -47,7 +47,7 @@ R is a UNIX based system, therefore data paths have to be specified using either
 
 One format for saving your data set in step 1 was the tab-delimited text file or `*.txt` file. If your data is saved as such, you can use one of the easiest and most general options to import your file to R: the `read.table()` function.
 
-```{r eval=FALSE}
+```{r}
 dat.txt <- read.table("<FileName>.txt", header = TRUE)
 ```
 
@@ -56,7 +56,7 @@ dat.txt <- read.table("<FileName>.txt", header = TRUE)
 **NOTE**:
 The field separator character is set to `""` or white space by default (**tab-delimited** `.txt` files). White spaces also indicate tabs, newlines or carriage returns. If your file uses another symbol to separate the fields of your data set (like e.g. `/`), indicate this by adding the sep argument.
 
-```{r eval=FALSE}
+```{r}
 dat.txt <- read.table("<FileName>.txt", header = TRUE, sep="/")
 ```
 
@@ -66,14 +66,14 @@ dat.txt <- read.table("<FileName>.txt", header = TRUE, sep="/")
 - Frequently used to read spreadsheets saved with the extension `*.csv`. 
 - `read.csv()` uses a comma, `read.csv2()` uses a semicolon.
 
-```{r eval=FALSE}
+```{r}
 dat.csv <- read.csv("<FileName>.csv")
 ```
 
 **NOTE**:
 The `dec` argument allows you to specify the character for the decimal mark. Make sure to specify this for your file if necessary, otherwise your values will be interpreted as separate variables.
 
-```{r eval=FALSE}
+```{r}
 dat.csv <- read.csv2("<FileName>.csv", dec = ",")
 ```
 
@@ -92,11 +92,11 @@ dat.csv <- read.csv2("<FileName>.csv", dec = ",")
 
 Checking the structure of the data set
 
-```{r echo=FALSE}
+```{r}
 facebook_data <- read.csv("~facebook_data.csv", sep=";")
 ```
 
-```{r eval=FALSE}
+```{r}
 str(facebook_data)
 ```
 
