@@ -1,8 +1,8 @@
 ---
-title: "Programming 2: Loops"
+title: "Loops"
 author: "Kathrin Gruber"
 date: ""
-output: pdf_document
+layout: none
 ---
 
 ## Definition
