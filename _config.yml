@@ -1,7 +1,7 @@
-author: Some Person
+author: Kathrin Gruber
 permalink: pretty
-paginate: 1
-title: RINTRO
+paginate: 5
+title: Introduction to programming with R for FAECTOR
 description: Minimal is a theme for GitHub Pages.
 show_downloads: true
 google_analytics:
