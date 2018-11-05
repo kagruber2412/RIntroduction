@@ -1,5 +1,8 @@
 ---
 title: "Data import"
+sidebar: toc
+category: getting-started
+order: 1
 ---
 
 # Data import
