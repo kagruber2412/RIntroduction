@@ -40,12 +40,13 @@ https://cran.r-project.org
 # R intro
 
 R Graphical User Interface (RGui) for Windows
-<br><br/>
-<img src="Ressources/RGui.png"  height="250" width="600">
-<br><br/>
+
+![](./Ressources/RGui.png)
+
 R application (R.app) for Mac OS X
-<br><br/>
-<img src="Ressources/Rapp.png"  height="250" width="600">
+
+![](./Ressources/Rapp.png)
+
 
 ## Language design
 
@@ -69,7 +70,6 @@ R returns 4 on the console.
 
 **NOTE**:
 Output can be returned on the console, on the graphic device or to a file.
-</div>
 
 ## Functions
 
@@ -180,7 +180,7 @@ d. Workspace management
 e. Graphic tools
 f. Debugging, syntax-highlighting, intelligent code completion,... (and more)
 
-![](Ressources/RStudio.png)
+![](./Ressources/RStudio.png)
 
 ## Script (.R)
 
@@ -254,4 +254,4 @@ Saving a graphic:
 
 - https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1
 - https://www.statmethods.net
-- `RStudio cheatsheet
+- RStudio cheatsheet (see **Help** in the menu bar)
