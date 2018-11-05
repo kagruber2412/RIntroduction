@@ -1,8 +1,8 @@
 ---
-title: "Data import, inspection, processing"
+title: "Data import"
 author: "Kathrin Gruber"
 date: ""
-output: pdf_document
+layout: output
 ---
 
 # Data import
