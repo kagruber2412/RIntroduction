@@ -2,11 +2,14 @@ author: Kathrin Gruber
 permalink: pretty
 paginate: 5
 title: Introduction to R
-description: Introduction to programming with R for FAECTOR
+description: Programming with R for FAECTOR
 show_downloads: true
 google_analytics:
 
 theme: jekyll-theme-minimal
 
-plugins:
-  - jekyll-sitemap
+docs:
+  - title: Getting Started
+    children:
+      - title: "A primer on R (and R Studio)"
+        url: 
