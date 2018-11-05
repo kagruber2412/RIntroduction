@@ -3,3 +3,6 @@ markdown: kramdown
 title: Introduction to R
 description: Programming with R for FAECTOR
 theme: minima
+
+header_pages:
+  - Base_R.md
