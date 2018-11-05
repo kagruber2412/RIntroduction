@@ -1,6 +1,8 @@
 ---
 title: "A Primer on R (and RStudio)"
 sidebar: toc
+category: getting-started
+order: 1
 ---
 
 # Preface
