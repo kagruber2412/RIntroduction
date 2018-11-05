@@ -1,7 +1,10 @@
 author: Some Person
-permalink: /:title/
+permalink: pretty
 paginate: 1
 title: RINTRO
+description: Minimal is a theme for GitHub Pages.
+show_downloads: true
+google_analytics:
 
 theme: jekyll-theme-minimal
 
