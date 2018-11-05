@@ -1,7 +1,10 @@
 name: R Introduction
 permalink: pretty
-
-markdown: kramdown
 theme: minima
 
-math_engine: mathjax
+highlighter: rouge
+ gist:
+   noscript: false
+ kramdown:
+   math_engine: mathjax
+   syntax_highlighter: rouge
