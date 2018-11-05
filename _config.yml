@@ -2,8 +2,3 @@ name: R Introduction
 permalink: /:year-:month-:day-:title/
 paginate: 1
 theme: minima
-lsi: false
-highlighter: rouge
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
