@@ -40,9 +40,9 @@ setwd("~/Desktop/Rintro") # set working directory to the folder you want to read
 
 By executing this command, R now knows exactly in which folder you’re working.
 
-<div class = "blue">
+**NOTE**:
 R is a UNIX based system, therefore data paths have to be specified using either `/` or `\\` (not like under windows with `\`).
-</div>
+
 
 ## Step 3: Loading your spreadsheets 
 
@@ -56,9 +56,8 @@ dat.txt <- read.table("<FileName>.txt", header = TRUE)
 
 - The second argument header is specified if the file has  names in the first line or top row (`TRUE` is the default value).
 
-<div class = "blue">
+**NOTE**:
 The field separator character is set to `""` or white space by default (**tab-delimited** `.txt` files). White spaces also indicate tabs, newlines or carriage returns. If your file uses another symbol to separate the fields of your data set (like e.g. `/`), indicate this by adding the sep argument.
-</div>
 
 ```{r eval=FALSE}
 dat.txt <- read.table("<FileName>.txt", header = TRUE, sep="/")
@@ -74,9 +73,8 @@ dat.txt <- read.table("<FileName>.txt", header = TRUE, sep="/")
 dat.csv <- read.csv("<FileName>.csv")
 ```
 
-<div class = "blue">
+**NOTE**:
 The `dec` argument allows you to specify the character for the decimal mark. Make sure to specify this for your file if necessary, otherwise your values will be interpreted as separate variables.
-</div>
 
 ```{r eval=FALSE}
 dat.csv <- read.csv2("<FileName>.csv", dec = ",")
@@ -100,7 +98,6 @@ Checking the structure of the data set
 ```{r echo=FALSE}
 facebook_data <- read.csv("~facebook_data.csv", sep=";")
 ```
-
 
 ```{r eval=FALSE}
 str(facebook_data)
