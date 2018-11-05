@@ -1,6 +1,5 @@
 author: Some Person
 permalink: /:title/
-markdown: kramdown
 paginate: 1
 theme: minima
 
