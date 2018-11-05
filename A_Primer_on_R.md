@@ -1,5 +1,5 @@
 ---
-title: "A Primer on R (and RStudio)"
+title: "Chapter 1: A Primer on R (and RStudio)"
 author: Kathrin Gruber
 date: ''
 output: pdf_document
