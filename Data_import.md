@@ -18,7 +18,7 @@ the sampling unit.
 resulting in errors that are related to the number of elements per line in your data set.
 - If you want to concatenate words, do this by inserting a `.`. For example: `Sepal.Length`
 - Short names are prefered over longer names.
-- Try to avoid using names that contain symbols such as `?`, `$`,`%`, `^`, `&`, `*`, `(`, `)`,`-`,`#`,`?`,`,`,`<`,`>`, `/`, `|`, `[` ,`]`,`{`, and `}.
+- Try to avoid using names that contain symbols such as `?`, `$`,`%`, `^`, `&`, `*`, `(`, `)`,`-`,`#`,`?`,`,`,`<`,`>`, `/`, `|`, `[` ,`]`,`{`, and `}`.
 - Delete any comments that you have made in your Excel file to avoid extra columns or `NA`’s to be added to your file.
 - Make sure that any missing values in your data set are indicated with `NA`.
 
