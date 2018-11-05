@@ -1,13 +1,10 @@
 ---
 title: "Functions"
-author: "Kathrin Gruber"
-date: ""
-layout: default
 ---
 
 ## Definition
 
-```{r, eval=FALSE}
+```{r}
 function_name <- function(argument) {
   statement
   }
@@ -101,7 +98,7 @@ foo(z)
 
 ### Example
 
-```{r, results='hide'}
+```{r}
 foo <- function(x, power=power) {
   step1 <- x^power    # raise the elements in x to the power of y
   step2 <- sum(step1) # sum-up the squarred values
@@ -120,7 +117,7 @@ foo(z, power=y)
 
 ### Example
 
-```{r, results='hide'}
+```{r}
 foo <- function(x, power=2) {
   step1 <- x^power    # raise the elements in x to the power of y
   step2 <- sum(step1) # sum-up the squarred values
