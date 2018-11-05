@@ -135,19 +135,19 @@ facebook_data$academic.achievement     # accessing column 2 by it's name
 
 # Data processing
 
-Calculating the mean of academic.achievement
+Calculating the mean of `academic.achievement`
 
 ```{r}
 mean(facebook_data$academic.achievement)  
 ```
 
-Calculating the median of academic.achievement
+Calculating the median of `academic.achievement`
 
 ```{r}
 median(facebook_data$academic.achievement)  
 ```
 
-Calculating the minimum and maximum of academic.achievement
+Calculating the minimum and maximum of `academic.achievement`
 
 ```{r}
 min(facebook_data$academic.achievement)  
@@ -167,7 +167,7 @@ boxplot(facebook_data$amount.of.friends, col="grey", horizontal = TRUE)
 
 
 (Scatter)Plotting variables
-```{r, eval=FALSE}
+```{r}
 plot(facebook_data$academic.achievement, facebook_data$hours.spent.on.facebook)
 ```
 
