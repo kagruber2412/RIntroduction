@@ -5,4 +5,8 @@ description: Programming with R for FAECTOR
 theme: minima
 
 header_pages:
+  - A_Primer_On_R.md
   - Base_R.md
+  - Data_import.md
+  - Programming_Functions.md
+  - Programming_Loops.md
