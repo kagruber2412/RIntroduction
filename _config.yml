@@ -3,3 +3,8 @@ permalink: pretty
 
 markdown: kramdown
 theme: minima
+
+header_pages:
+  - A_Primer_On_R.md
+  - Base_R.md
+ 
