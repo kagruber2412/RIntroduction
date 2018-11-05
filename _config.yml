@@ -1,5 +1,5 @@
 name: R Introduction
-permalink: /:year-:month-:day-:title/
+permalink: /:title/
 paginate: 1
 theme: minima
 
