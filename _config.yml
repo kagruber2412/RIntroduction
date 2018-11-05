@@ -1,4 +1,5 @@
-name: R Introduction
+author:
+  name: Some Person
 permalink: /:title/
 paginate: 1
 theme: minima
@@ -15,6 +16,3 @@ hover-col: "#0085A1"
 footer-col: "#F5F5F5"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
-
-author:
-  name: Some Person
