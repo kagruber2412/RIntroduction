@@ -31,25 +31,24 @@ function_name <- function(argument) {
 - Statements within the curly brace form the function body. 
 - Everything between the braces is part of the body of the function. Defines what the function does (and often also determines it's name).
 
-
-### Example
+**Example**:
 
 ```{r}
-foo <- function(x) {x^2}
+foo <- function(x) { x^2 }
 foo(2)
 ```
 
-The function `foo` returns the value `4`.
+The function `foo` squares a value and prints the result `4`.
 
 ## Return values
-
-- If there are no explicit returns from a function, the value of the last evaluated expression is returned automatically in R.
 
 - Generally explicit `return()` functions are used to return a value immediately from a function (used in processing steps).
 
 - The value returned from a function can be any valid object.
 
-### Example
+- If there are no explicit returns from a function, the value of the last evaluated expression is returned automatically in R.
+
+**Example**:
 
 ```{r}
 z <- sample(c(1:100), 10) # generate 10 random samples from the sequences 1 to 100 
@@ -78,7 +77,7 @@ foo(z)
 
 ## Lists
 
-The `return()` function can return only a single object. If we want to return multiple values in R, we can use a (named) `list` and return it.
+- The `return()` function can return only a single object. If we want to return multiple values in R, we can use a (named) `list` and return it.
 
 ```{r}
 foo <- function(x) {
@@ -99,7 +98,7 @@ foo(z)
 - The function can also be called using named arguments.
 - In a single function call named and unnamed arguments can be used togehter.
 
-### Example
+**Example**:
 
 ```{r}
 foo <- function(x, power=power) {
@@ -118,7 +117,7 @@ foo(z, power=y)
 - Provide an appropriate value to the formal argument in the function declaration.
 - The use of a default value to an argument makes it optional when calling the function.
 
-### Example
+**Example**:
 
 ```{r}
 foo <- function(x, power=2) {
