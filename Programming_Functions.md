@@ -12,6 +12,10 @@ function_name <- function(argument) {
   statement
   }
 ```
+**`function_name`**
+
+- The actual name of the function.
+- Stored in the R environment as an object with this name.
 
 **`function`**
 
@@ -25,12 +29,8 @@ function_name <- function(argument) {
 **`{ statement }`**
 
 - Statements within the curly brace form the function body. 
-- Everything between the braces is part of the body of the function. Defines what the function does.
+- Everything between the braces is part of the body of the function. Defines what the function does (and often also determines it's name).
 
-**`function_name`**
-
-- The actual name of the function.
-- Stored in the R environment as an object with this name.
 
 ### Example
 
