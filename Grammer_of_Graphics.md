@@ -52,13 +52,15 @@ hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings")
 * changing x axis labels
 
 ```{r}
-hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", xlab = "Rating")
+hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", 
+     xlab = "Rating")
 ```
 
 * changing y axis scale
 
 ```{r}
-hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", xlab = "Rating", freq = FALSE)
+hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", 
+     xlab = "Rating", freq = FALSE)
 ```
 
 ### Scatterplot
@@ -78,19 +80,22 @@ plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals")
 * changing the x and y range (limits: from = ?, to = ?)
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200))
+plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
+     xlim = c(0,100), ylim = c(0,200))
 ```
 
 * changing the plotting symbol size
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), cex = 2)
+plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
+     xlim = c(0,100), ylim = c(0,200), cex = 2)
 ```
 
 * changing the plotting symbol (plotting character)
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", xlim=c(0,100), ylim=c(0,200), cex = 2, pch = 19)
+plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
+     xlim = c(0,100), ylim = c(0,200), cex = 2, pch = 19)
 ```
 
 ### Boxplot
@@ -110,7 +115,8 @@ boxplot(rating ~ mfr, data = cereals, col = c("gray","dodgerblue"))
 * changing the tick labels (A: American Home Food Products; G: General Mills; K: Kelloggs; N: Nabisco; P: Post; Q: Quaker Oats; R: Ralston Purina)
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = c("gray","dodgerblue"), names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
+boxplot(rating ~ mfr, data = cereals, col = c("gray","dodgerblue"), 
+       names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker","Purina"))
 ```
 
 ### Colors in R
@@ -131,37 +137,45 @@ colors()
 * Adding text to a scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col="gray", main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), cex=2, pch = 19)
+plot(calories ~ rating, data = cereals, col = "gray", 
+     main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
+     cex = 2, pch = 19)
 text(cereals$rating, cereals$calories, labels=cereals$name)
 ```
 
 * Adding fitted lines to a scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col = "gray", main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), cex = 2, pch = 19)
+plot(calories ~ rating, data = cereals, col = "gray", 
+     main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
+     cex = 2, pch = 19)
 abline(lm(calories ~ rating, data = cereals))
 ```
 
 * Adding text to the fitted line in a scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col="gray", main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), cex = 2, pch=19)
+plot(calories ~ rating, data = cereals, col = "gray", 
+     main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
+     cex = 2, pch=19)
 mod <- lm(calories ~ rating, data = cereals)
 abline(coef(mod))
-text(20,150,paste("y =",round(coef(mod)[1],2),"beta_0 +",round(coef(mod)[2],2),"beta_1"))
+text(20, 150, paste("y =",round(coef(mod)[1],2),"beta_0 +",round(coef(mod)[2],2),"beta_1"))
 ```
 
 * Adding data points the boxplot of rating vs. manufacturer
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = rainbow(7), names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
+boxplot(rating ~ mfr, data = cereals, col = rainbow(7), 
+       names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
 points(rating ~ mfr, data = cereals, pch = 19)
 ```
 
 * Adding a legend to the boxplot of rating vs. manufacturer
 
 ```{r}
-legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), bty="n", fill=rainbow(7))
+legend("topleft", legend = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
+       bty = "n", fill = rainbow(7))
 ```
 
 ### Further annotatins
@@ -171,17 +185,21 @@ The function `par()` can be used to specify the global graphics parameters that 
 * Label text perpendicular to axis
 
 ```{r}
-par(las=2) 
-boxplot(rating ~ mfr, data = cereals, col=rainbow(7), names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
-legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), bty="n", fill=rainbow(7))
+par(las = 2) 
+boxplot(rating ~ mfr, data = cereals, col = rainbow(7), 
+        names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
+legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
+        bty = "n", fill = rainbow(7))
 ```
 
 * Increase the top margin (as no title is provided)
 
 ```{r}
-par(las=2, mar=c(5,4,1,2))
-boxplot(rating ~ mfr, data = cereals, col=rainbow(7), names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
-legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), bty="n", fill=rainbow(7))
+par(las = 2, mar = c(5,4,1,2))
+boxplot(rating ~ mfr, data = cereals, col=rainbow(7), 
+        names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
+legend("topleft", legend = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
+       bty = "n", fill = rainbow(7))
 ```
 
 # The Grammer of Graphics
@@ -189,10 +207,10 @@ legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker
 * Grammar to describe and construct statistical graphics; based on the idea of building up a graphic by semantic components.
 
 * `ggplot2` is an R library that allows to build graphical features up in a series of layers:
- 1. **aesthetic** mapping of the data (`aes()`), defines how variables are connected to visual properties or outputs (e.g. color, size, shape).
+ 1. **aesthetic** mapping of the data, defines how variables are connected to visual properties or outputs (e.g. color, size, shape).
  2. **geometric** objects representing the data.
  3. **coordinate systems**.
- 4. **faceting** the data; splitting by some predefined criteria to display sup-graphs by `facet_wrap()` or `facet_grid()`.
+ 4. **faceting** the data; splitting by some predefined criteria to display sup-graphs.
  5. **themes** to control non-data elements.
  6. **scales** map values in the data space to values in the aesthetic space (color, size, labels, ...) and are reported on the plot using axes and legends.
 
@@ -205,7 +223,7 @@ library(ggplot2)
 * Supply the `cereal` dataset and aesthetic mapping with `aes()` to the function call `ggplot()`
 
 ```{r}
-p <- ggplot(cereals, aes(x=mfr, y=rating)) + 
+p <- ggplot(cereals, aes(x = mfr, y = rating)) + 
    geom_boxplot()        # Box plot of rating vs. manufacturer
 p
 ```
@@ -219,7 +237,7 @@ p + geom_jitter(shape = 16, position = position_jitter(0.1)) # Add jittered data
 ```
 
 ```{r}
-p <- ggplot(cereals, aes(x=mfr, y=rating)) + 
+p <- ggplot(cereals, aes(x = mfr, y = rating)) + 
     geom_boxplot(outlier.colour = "red", outlier.shape = 8, outlier.size = 4) # Change outlier (color, shape and size)
 p
 ```
