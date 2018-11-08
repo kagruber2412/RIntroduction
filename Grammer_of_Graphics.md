@@ -224,37 +224,44 @@ library(ggplot2)
 
 ```{r}
 p <- ggplot(cereals, aes(x = mfr, y = rating)) + 
-   geom_boxplot()        # Box plot of rating vs. manufacturer
+  geom_boxplot()    # Box plot of rating vs. manufacturer
 p
-```
-
-```{r}
-p + coord_flip()         # Horizontal boxes (rotating the boxes)
-```
-
-```{r}
-p + geom_jitter(shape = 16, position = position_jitter(0.1)) # Add jittered data points (0.1 : degree of jitter in x direction)
 ```
 
 ```{r}
 p <- ggplot(cereals, aes(x = mfr, y = rating)) + 
-    geom_boxplot(outlier.colour = "red", outlier.shape = 8, outlier.size = 4) # Change outlier (color, shape and size)
+  geom_boxplot(outlier.colour = "red", outlier.shape = 8, outlier.size = 4) 
+                     # Change outlier (color, shape and size)
 p
 ```
 
 ```{r}
-p <- ggplot(cereals, aes(x=mfr, y=rating, color=mfr)) +   # Change box plot line colors by groups
+p + coord_flip()     # Add coordiante system flip (rotate the boxes)
+```
+
+```{r}
+p + geom_jitter(shape = 16, position = position_jitter(0.1)) # Add jittered data points 
+                      # (0.1 : degree of jitter in x direction)
+```
+
+
+```{r}
+p <- ggplot(cereals, aes(x = mfr, y = rating, color = mfr)) +   
+                      # Change box plot line colors by groups
   geom_boxplot() +
-  labs(title="Boxplot of cereals",x = "Manufacturer", y = "Rating")  
+  labs(title = "Boxplot of cereals", x = "Manufacturer", y = "Rating")  
+                      # Add scale labels and plot title
 p
 ```
 
 ```{r}
-p + scale_color_brewer(palette = "Dark2")  # Change box plot line colors by groups using brewer color palettes
+p + scale_color_brewer(palette = "Dark2")  
+                     # Add box line colors by groups using brewer color palettes
 ```
 
 ```{r}
-p + scale_color_grey() + theme_classic() # Change box plot line colors by groups using grey scale
+p + scale_color_grey() + # Add box line colors by groups using grey scale
+    theme_classic()  # Add classic plot theme
 ```
 
 ## (Useful) Ressources
