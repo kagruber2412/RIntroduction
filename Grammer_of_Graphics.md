@@ -153,6 +153,37 @@ colors()
    + [latexcolor.com](http://latexcolor.com)
    + [ColorBrewer.org](http://colorbrewer2.org)
 
+* Color palettes
+
+Built-in color palettes
+```{}
+n <- 10
+rainbow(n)
+heat.colors(n)
+terrain.colors(n)
+topo.colors(n)
+cm.colors(n)
+```
+
+ColorBrewer palettes
+```{r}
+library("RColorBrewer")
+display.brewer.all()
+```
+1. **Sequential palettes** for ordered data that progress from low to high 
+2. **Diverging palettes** put emphasis on mid-range critical values and extremes at both ends of the data range. 
+3. **Qualitative palettes** for nominal or categorical data (they do not imply differences between groups).
+
+Wes Anderson movie palettes
+```{r}
+library(wesanderson) 
+wes_palettes
+```
+
+Do-it-yourself color palettes
+```{r}
+colorRampPalette(c("white", "gray30"))(10)  # (interpolating a 'sequential' palette)
+```
 
 ## Annotating an existing standard graph
 
