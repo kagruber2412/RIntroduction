@@ -246,7 +246,7 @@ legend("topleft", legend = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quak
 
 # The Grammer of Graphics
 
-* Grammar to describe and construct statistical graphics; based on the idea of building up a graphic by semantic components.
+* Grammar to describe and construct statistical graphs; based on the idea of building up a graph by semantic components.
 
 * `ggplot2` is an R library that allows to build graphical features up in a series of layers:
  1. **aesthetic** mapping of the data, defines how variables are connected to visual properties or outputs (e.g. color, size, shape).
@@ -310,4 +310,5 @@ p + scale_color_grey() + # Add box line colors by groups using grey scale
 
 * http://r4ds.had.co.nz/data-visualisation.html
 * http://vita.had.co.nz/papers/layered-grammar.pdf
-* R Graphics Cookbook by Winston Chang
+* [R Graphics Cookbook by Winston Chang](http://www.cookbook-r.com/Graphs/)
+* [R Graphics by Paul Murrell](https://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html)
