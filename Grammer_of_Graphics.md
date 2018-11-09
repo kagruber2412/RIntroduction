@@ -25,77 +25,77 @@ One of the main advantages of R is its strong graphic capabilities!
 cereals <- read.csv("cereal.csv")  # read-in the cereals data set
 ```
 
-E.g.: scatterplots, boxplots, histograms, barplots, piecharts...
-
+Histogramm
 ```{r}
 hist(cereals$rating)    # Histogramm of ratings
 ```
+
+Scatterplot
 ```{r}
 plot(calories ~ rating, data = cereals)  # Scatterplot of calories against rating
 ```
+
+Boxplot
 ```{r}
 boxplot(rating ~ mfr, data = cereals)    # Boxplot of rating vs. manufacturer
 ```
 
+other examples: `barplot()`, `piechart()`, `dotplot()`, ...
+
 ## Customizing standard graphs
 
-Controlling (global) graphic parameters: colors, point symbols, line styles, labels and titles.
+Controlling (global) graphic parameters (colors, point symbols, line styles, labels and titles).
 
 ### Histogramm
 
- * changing bar colors and the title
+ * customizing bar color and the title
  
 ```{r}
-hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings")
+hist(cereals$rating, col = "gray")
 ```
 
-* changing x axis labels
+* customizing the title
 
 ```{r}
-hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", 
-     xlab = "Rating")
+hist(cereals$rating, main = "Histogramm of cerals ratings")
 ```
 
-* changing y axis scale
+* customizing the x axis label
 
 ```{r}
-hist(cereals$rating, col="gray", main = "Histogramm of cerals ratings", 
-     xlab = "Rating", freq = FALSE)
+hist(cereals$rating, xlab = "Rating")
+```
+
+* customizing the y axis scale
+
+```{r}
+hist(cereals$rating, freq = FALSE)
 ```
 
 ### Scatterplot
 
-* changing plotting symbol color
+* customizing the plotting symbol color
 
 ```{r}
-plot(calories ~ rating, data = cereals)
+plot(calories ~ rating, col = "#848482", data = cereals)
 ```
 
-* changing the title
+* customizing the plotting symbol (plotting character)
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals")
-```
-
-* changing the x and y range (limits: from = ?, to = ?)
-
-```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
-     xlim = c(0,100), ylim = c(0,200))
+plot(calories ~ rating, pch = 19, data = cereals)
 ```
 
 * changing the plotting symbol size
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
-     xlim = c(0,100), ylim = c(0,200), cex = 2)
+plot(calories ~ rating, data = cereals, cex = 2)
 ```
 
-* changing the plotting symbol (plotting character)
+* changing the x and y range (limits: from = ?, to = ?)
 
 ```{r}
-plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals", 
-     xlim = c(0,100), ylim = c(0,200), cex = 2, pch = 19)
+plot(calories ~ rating, xlim = c(0,100), ylim = c(0,200), data = cereals)
 ```
 
 ### Boxplot
@@ -103,29 +103,51 @@ plot(calories ~ rating, data = cereals, main = "Scatterplot of cereals",
 * changing the box color
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = "gray")
+boxplot(rating ~ mfr, col = "slateblue", data = cereals)
 ```
-
-* changing the box colors
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = c("gray","dodgerblue"))
+boxplot(rating ~ mfr, col = c("slategray","slateblue"), data = cereals)
 ```
+**NOTE**: The box color vector is *recycled*!
 
 * changing the tick labels (A: American Home Food Products; G: General Mills; K: Kelloggs; N: Nabisco; P: Post; Q: Quaker Oats; R: Ralston Purina)
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = c("gray","dodgerblue"), 
-       names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker","Purina"))
+boxplot(rating ~ mfr, names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker","Purina"),
+        data = cereals)
 ```
 
-### Colors in R
+## More customizing
+
+The function `par()` can be used to specify the global graphics parameters that affect **all** plots in the active R session.
+
+* Label text perpendicular to axis
+
+```{r}
+par(las = 3) 
+boxplot(rating ~ mfr, names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"),
+       data = cereals)
+```
+
+* decrease the top margin (as no title is provided)
+
+```{r}
+par(mar = c(5,4,1,2))
+boxplot(rating ~ mfr, 
+        names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"),
+        data = cereals)
+```
+
+## Colors in R
 
 * Built-in 657 named colors:
 
 ```{r}
 colors()
 ```
+
+![](./Ressources/colors.png)
 
 * R uses **hexadecimal** (a base-16 number system) to represent colors (hex model also translates to RGB, HSV, HCL color models), see also:
    + [latexcolor.com](http://latexcolor.com)
@@ -134,70 +156,59 @@ colors()
 
 ## Annotating an existing standard graph
 
-* Adding text to a scatterplot
+### Scatterplot
+
+* Adding text to a (customized) scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col = "gray", 
+# Creating a color vector for the data points
+mfr.col <- ifelse(cereals$mfr == "A", "#66c2a5", ifelse(cereals$mfr == "G", "#fc8d62",
+           ifelse(cereals$mfr == "K", "#8da0cb", ifelse(cereals$mfr == "N", "#e78ac3", 
+           ifelse(cereals$mfr == "P", "#a6d854", ifelse(cereals$mfr == "Q", "#ffd92f",
+           ifelse(cereals$mfr == "R", "#e5c494", NA)))))))
+
+# Avoid "ties" using jitter (adds a random amount of noise to the variable)
+cereals$calories.jitter <- jitter(cereals$calories, amount = 10)
+
+# Scatterplot of rating against the jittered calories
+plot(calories.jitter ~ rating, col = mfr.col, 
      main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
-     cex = 2, pch = 19)
-text(cereals$rating, cereals$calories, labels=cereals$name)
+     cex = 2, pch = 19, data = cereals)
+     
+# Adding the manufacturer label to the points
+text(cereals$rating, cereals$calories.jitter, labels=cereals$mfr)
+
+# Alternative: Identify the cereals brand name
+identify(cereals$rating, cereals$calories.jitter, labels = cereals$name, plot = TRUE)
 ```
 
-* Adding fitted lines to a scatterplot
+* Adding a (fitted regression) line to the scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col = "gray", 
-     main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
-     cex = 2, pch = 19)
-abline(lm(calories ~ rating, data = cereals))
+linear.model <- lm(calories ~ rating, data = cereals)
+abline(coef(linear.model))
 ```
 
-* Adding text to the fitted line in a scatterplot
+* Adding text to the (fitted regression) line in the scatterplot
 
 ```{r}
-plot(calories ~ rating, data = cereals, col = "gray", 
-     main = "Scatterplot of cereals", xlim = c(0,100), ylim = c(0,200), 
-     cex = 2, pch=19)
-mod <- lm(calories ~ rating, data = cereals)
-abline(coef(mod))
-text(20, 150, paste("y =",round(coef(mod)[1],2),"beta_0 +",round(coef(mod)[2],2),"beta_1"))
+text(40, 160, paste("y =",round(coef(linear.model)[1],2),"* calories + (",round(coef(linear.model)[2],2),"* rating)"))
 ```
 
-* Adding data points the boxplot of rating vs. manufacturer
+### Boxplot
+
+* Adding data points to a customized boxplot
 
 ```{r}
-boxplot(rating ~ mfr, data = cereals, col = rainbow(7), 
-       names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
-points(rating ~ mfr, data = cereals, pch = 19)
+boxplot(rating ~ mfr, col = rainbow(7), 
+       names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), las = 3,
+       data = cereals)
+points(rating ~ mfr, pch = 19, col = "slategray", data = cereals)
 ```
 
-* Adding a legend to the boxplot of rating vs. manufacturer
+* Adding a legend to the boxplot
 
 ```{r}
-legend("topleft", legend = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
-       bty = "n", fill = rainbow(7))
-```
-
-### Further annotatins
-
-The function `par()` can be used to specify the global graphics parameters that affect **all** plots in the active R session.
-
-* Label text perpendicular to axis
-
-```{r}
-par(las = 2) 
-boxplot(rating ~ mfr, data = cereals, col = rainbow(7), 
-        names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
-legend("topleft", legend=c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
-        bty = "n", fill = rainbow(7))
-```
-
-* Increase the top margin (as no title is provided)
-
-```{r}
-par(las = 2, mar = c(5,4,1,2))
-boxplot(rating ~ mfr, data = cereals, col=rainbow(7), 
-        names = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"))
 legend("topleft", legend = c("A.H.F.P.","Mills","Kellogs","Nabisco","Post","Quaker", "Purina"), 
        bty = "n", fill = rainbow(7))
 ```
