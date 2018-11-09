@@ -153,7 +153,7 @@ colors()
    + [latexcolor.com](http://latexcolor.com)
    + [ColorBrewer.org](http://colorbrewer2.org)
 
-* Color palettes
+* **Color palettes**:
 
 Built-in color palettes
 ```{}
