@@ -108,7 +108,7 @@ result
 
 **`one.sample`**
 
-1. Again, read in the familiar `facebook_data` file from Lesson 2. Assign the file to an object called `data`.
+1. Read in the `facebook_data` file. Assign the file to an object called `data`.
 
 2. Rename the columns in the data frame to `ID`, `Achievement`, `Facebookhours`, `No.Friends`.
 
@@ -154,12 +154,6 @@ for(i in 1:length(data$Achievement)){
     result[i] <- 1
   }
 }
-result
-```
-
-
-```{r}
-result <- ifelse(data$Achievement < mean(data$Achievement), 0, 1)
 result
 ```
 
