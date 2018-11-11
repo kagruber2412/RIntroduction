@@ -137,3 +137,8 @@ Improving code efficiency by shortening the time spent on writting code using th
 | sapply() | list or vector | vector, matrix or list |
 | vapply() | list or vector | vector, matrix or list |
 | tapply() | data.frame, categories | array or list |
+
+
+# Usefuls ressources
+
+* [The R-inferno by Patrick Burns](https://www.burns-stat.com/documents/books/the-r-inferno/)
