@@ -1,4 +1,9 @@
-# Do's and Don'ts
+---
+title: "Do's and Don'ts"
+sidebar: toc
+category: Programming
+order: 1
+---
 
 ## Failing to vectorize:
 
