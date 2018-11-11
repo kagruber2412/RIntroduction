@@ -43,8 +43,8 @@ system.time(x <- log(x))
 **Excessive looping makes your code slow!**
 
 If vectorization is impossible: Put as much outside of loops as possible!
-* Creating the same sequence object in each iteration - create the sequence first and than resuse it to save computing time.
-* Condition checks (if statements) should be done before running the loop, and the loop should only be run for `TRUE` conditions to keep the iteration number low.
+* Avoid creating (the same) sequence objects in each iteration - create the sequence first and reuse it to save computing time.
+* Check conditions (if statements) before (!) running the loop. Keep the iteration number low by running the loop only on the `TRUE` conditions.
 * Use `data.table` objects to reduce memory overload (if you have a substantial amount of data and speed is an issue). 
 * Run those operations that are not vectorized in an **apply** statement. 
 
@@ -55,8 +55,8 @@ Set-up a for-loop that calculates the sum for each row of a matrix named `X`. Us
 X <- matrix(1:1000000, nrow = 100000, ncol = 10)
 ```
 
+Solution 1
 ```{r}
-# Solution 1
 for.time <- system.time({
 for.sum <- vector()
   for (i in 1:nrow(X)) {
@@ -71,10 +71,10 @@ head(for.sum)
 for.time
 ```
 
+Solution 2 (the faster solution)
 ```{r}
-# Solution 2
 for.time <- system.time({
-for.sum <- vector('integer', 100000) # the faster option
+for.sum <- vector('integer', 100000) 
   for (i in 1:nrow(X)) {
       for.sum[i] <- sum(X[i,])
   }
@@ -87,8 +87,8 @@ head(for.sum)
 for.time
 ```
 
+Solution 3
 ```{r}
-# Solution 3
 apply.time <- system.time(
   app.sum <- apply(X, MARGIN = 2, sum)
 )
@@ -100,8 +100,8 @@ head(app.sum)
 apply.time
 ```
 
+Solution 4
 ```{r}
-# Solution 4
 lapply.time <- system.time(
   lapp.sum <- unlist(lapply(1:dim(X)[2], function(l) sum(X[,l])))
 )
@@ -113,8 +113,8 @@ head(lapp.sum)
 lapply.time
 ```
 
+Solution 5
 ```{r}
-# Solution 5
 sum.time <- system.time(
   rowSums.sum <- rowSums(X)
 )
@@ -128,7 +128,7 @@ sum.time
 
 What are the reasons?
 * No need to create a container object.
-* `lapply()` and `rowSums()` are based on more internal C++ code.
+* `lapply()` and `rowSums()` are based on (more) internal C++ code.
 
 
 ## Over-vectorizing
