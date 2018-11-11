@@ -7,9 +7,9 @@ order: 1
 
 ## Definition
 
+* Automating a multi-step process.
 * For-loops iterate across a sequence of values (in R for-loops iterate over a vector).
 * Runs code repeatedly for each value in the sequence.
-* Automating a multi-step process.
 
 ```{r}
 for(var in sequence){
@@ -93,7 +93,7 @@ for(i in 1:5){
   } else {
   power <- x[i]^2     # if i is larger than 2, take the squarre
   }
-  result[i] <- power  # change print to assignment
+  result[i] <- power 
 }
 
 result
