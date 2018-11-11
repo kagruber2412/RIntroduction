@@ -40,7 +40,7 @@ system.time(x <- log(x))
 If vectorization is impossible: Put as much outside of loops as possible!
 * Creating the same sequence object in each iteration - create the sequence first and than resuse it to save computing time.
 * Condition checks (if statements) should be done before running the loop, and the loop should only be run for `TRUE` conditions to keep the iteration number low.
-* Use `data.table` objects to reduce memory overload.
+* Use `data.table` objects to reduce memory overload (if you have a substantial amount of data and speed is an issue). 
 * Run those operations that are not vectorized in an **apply** statement. 
 
 **Example:** Summing over rows of a matrix.
@@ -124,3 +124,16 @@ sum.time
 What are the reasons?
 * No need to create a container object.
 * `lapply()` and `rowSums()` are based on more internal C++ code.
+
+
+## Over-vectorizing
+
+Improving code efficiency by shortening the time spent on writting code using the **apply** family of functions.
+
+| function | Input | Output |
+|----------|------------------------|------------------------|
+| apply() | matrix or array | vector, array or list |
+| lapply() | list or vector | list |
+| sapply() | list or vector | vector, matrix or list |
+| vapply() | list or vector | vector, matrix or list |
+| tapply() | data.frame, categories | array or list |
