@@ -116,8 +116,7 @@ result
 
 ```{r}
 result <- vector("double", length=4). # Version 1
-result <- unlist(list(NULL)).         # Version 2
-result <- vector()                    # Version 3
+result <- vector()                    # Version 2
 for(i in 2:dim(data)[2]){
   result[i] <- t.test(data[,i])$statistic
 }
