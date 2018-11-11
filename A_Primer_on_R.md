@@ -5,8 +5,6 @@ category: getting-started
 order: 1
 ---
 
-# Preface
-
 ## Why R?
 
 - Very intuitive syntax.
