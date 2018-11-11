@@ -157,3 +157,9 @@ for(i in 1:length(data$Achievement)){
 result
 ```
 
+```{r}
+# Alternative
+result <- ifelse(data$Achievement < mean(data$Achievement), 0, 1)
+result
+```
+
