@@ -19,7 +19,7 @@ order: 1
 2. **knitr** for embedded R code
 3. **YAML** for render parameters
 
-## Markdown formatted text
+## 1. Markdown for formatted text
 
 Markdown is a set of very easy to use conventions for formatting *plain text*:
 
@@ -32,7 +32,7 @@ Markdown is a set of very easy to use conventions for formatting *plain text*:
 
 Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks ( * ) and backticks (` `). All you have control over is the display of the text—stuff like making things bold, creating headers, and organizing lists.
 
-## knitr for embedded R code
+## 2. knitr for embedded R code
 
 The knitr package extends the basic markdown syntax to include chunks of executable R code.
 
@@ -53,12 +53,12 @@ The knitr package extends the basic markdown syntax to include chunks of executa
 - `fig.height`, `fig.width` (specify height and width of the figure)
 - `out.width`, `out.height (width/height to which plots are scaled in the final document)
 
-## YAML for render parameters
+## 3. YAML for render parameters
 
 The YAML header controls how rmarkdown renders the `.Rmd` file.
 
 
-# Dynamic documents with RMarkdown
+# Dynamic documents with R Markdown
 
 - `output: html_document` (generates html document, default)
 - `output: pdf_document` (generates pdf document)
