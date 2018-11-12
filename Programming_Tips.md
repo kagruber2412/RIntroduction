@@ -137,11 +137,11 @@ Improving code efficiency by shortening the time spent on writting code using th
 
 | function | Input | Output |
 |----------|------------------------|------------------------|
-| apply() | matrix or array | vector, array or list |
-| lapply() | list or vector | list |
-| sapply() | list or vector | vector, matrix or list |
-| vapply() | list or vector | vector, matrix or list |
-| tapply() | data.frame, categories | array or list |
+| `apply()` | matrix or array | vector, array or list |
+| `lapply()` | list or vector | list |
+| `sapply()` | list or vector | vector, matrix or list |
+| `vapply()` | list or vector | vector, matrix or list |
+| `tapply() | data.frame, categories | array or list |
 
 
 # Usefuls ressources
