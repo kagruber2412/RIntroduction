@@ -249,7 +249,7 @@ Using the `stargazer` package (for more settings see `?stargazer`)
 library(stargazer)
 
 # HTML table
-stargazer(data, type = "html", digits = 2,
+stargazer(df, type = "html", digits = 2,
           summary.stat = c("mean","sd","median","min", "max"))
 ```
 
