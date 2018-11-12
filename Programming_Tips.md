@@ -7,6 +7,8 @@ order: 1
 
 ## Failing to vectorize
 
+Improving computational efficiency by using vectorization.
+
 ```{r}
 c(log(1), log(2))
 
@@ -14,20 +16,10 @@ c(log(1), log(2))
 log(c(1,2))
 ```
 
-```{r}
-x <- 1:100
-for(i in 1:length(x)){
-  x[i] <- log(x[i])
-}
-x
-```
-
-```{r}
-x <- 1:100
-log(x)
-```
+The `log()` function is vectorized: it does the same operation on a vector of elements as it would do on each single element. 
 
 Why should we care?
+
 ```{r}
 x <- 1:100
 system.time(for(i in 1:length(x)){
@@ -138,7 +130,7 @@ What are the reasons?
 
 ## Over-vectorizing
 
-Improving code efficiency by shortening the time spent on writting code using the **apply** family of functions.
+Improving human efficiency by shortening the time spent on writting code using the **apply** family of functions.
 
 | function | Input | Output |
 |----------|------------------------|------------------------|
