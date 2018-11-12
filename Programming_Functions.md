@@ -42,7 +42,11 @@ The function `foo` squares a value and prints the result `4`.
 
 ## Return values
 
-- Generally explicit `return()` functions are used to return a value immediately from a function (used in processing steps).
+- Unlike some other languages explicit `return()` functions are used to return a value immediately from a function (used in processing steps). For example, the following construct does NOT do what is intended:
+
+```{r}
+return (2/5) * 3:9  # returns 0.4 and ignores the rest.
+```
 
 - The value returned from a function can be any valid object.
 
@@ -136,81 +140,174 @@ foo(z)
 
 - [R for Beginners](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf)
 
-## Exercises
 
-**`Percentages`**
+## Generic functions
 
-1. Read in the file `facebook_data`. Assign the file to an object called `data`.
+**Example**: OLS estimation
+
+Necessary incredients:
 
 ```{r}
-data <- read.csv2("facebook_data.csv")
-data
+# load the data
+load("Q4_2011.RData")
 ```
 
-2. Rename the columns in the data frame to `ID`, `Achievement`, `Facebookhours`, `No.Friends`.
-
 ```{r}
-# overriding the colnames
-colnames(data) <- c("ID", "Achievement", "Facebookhours", "No.Friends")
-# check 
-colnames(data)
+# The outcome vector y
+y <- Q4_2011$cnt
+
+# Built the X matrix (design/ data) matrix, includes an intercept) 
+X <- as.matrix(cbind(1,Q4_2011[,c("workingday","weathersit","atemp","hum","windspeed")])) 
+# Note: force X to be a matrix as cbind() generates a list!
+head(X)
+
+# Alternatively you can use:
+X <- model.matrix(cnt ~ workingday + weathersit + atemp + hum + windspeed, data=Q4_2011)
+# model.matrix() offers more flexibility: allows for the definition of contrasts (and the intercept is automatically included and labeled as "intercept")
+head(X)
 ```
 
-3. Write a function `percentages` that calculates the percentage of `Facebookhours` spent per day, rounded to two decimal places and including a percentage sign after the rounded number (Hint: use the functions `round()` and `paste()`).
+* Obtaining the beta coefficients $\hat{\beta} = (X'X)^{-1} X'y$
 
 ```{r}
-percentages <- function(x) {   # takes on only one argument x (the data)
-  res <- (x/24)*100            # divide the argument x (the data) by 24, multiply by 100 to obtain percentages
-  return(paste(round(res, digits = 2), "%", sep="")) # return the (rounded) values incl. % (we do not want to have a space in between the value and %)
+beta_hat <- solve(t(X) %*% X) %*% t(X) %*% y
+beta_hat
+```
+
+* Obtaining the residuals (defined as the deviations of the predicted values $\hat{y} = X \hat{\beta}$ from the observed values $y$):
+
+```{r}
+resid <- y - X %*% beta_hat
+head(resid)
+```
+
+* Obtaining $\hat{\sigma}^2 = (e'e) / (n - p)$:
+
+```{r}
+sigma2_hat <- (t(resid) %*% resid) / (nrow(X) - ncol(X)) 
+sigma2_hat
+```
+
+* Obtaining the variance-covariance (vcov) matrix $\hat{\sigma}^2 (X'X)^{-1}$
+
+```{r}
+vcov_hat <- c(sigma2_hat) * solve(t(X) %*% X) 
+vcov_hat
+```
+
+* Obtaining the standard errors (the square root of the diagonal elements in vcov):
+
+```{r}
+sqrt(diag(vcov_hat))
+```
+
+### Putting it all together ("writting a function")
+
+```{r}
+ols <- function(x = x, y = y, data = data){
+  X <- model.matrix(as.formula(paste("y ~", paste(x, collapse="+"))), data=data) # Generate X
+  # We can use the function paste() within model.matrix()
+  # Note: you could also parse x and y directly within a formula statement to model.matrix (what is done by the lm() function but a bit tricky)
+  
+  beta_hat <- solve(t(X) %*% X) %*% t(X) %*% y               # obtaining the beta coefficients
+  fitted <- X %*% beta_hat                                   # obtaining the fitted values (model predictions)
+  resid <- y - fitted                                        # obtaining the residuals
+  sigma2_hat <- (t(resid) %*% resid) / (nrow(X) - ncol(X))   # obtaining the sigma^2_hat
+  vcov_hat <- c(sigma2_hat) * solve(t(X) %*% X)              # obtaining the VCOV
+  se <- sqrt(diag(vcov_hat))                                 # obtaining the standard errors
+  
+  # Collect everything in a list
+  list(beta=beta_hat, resid=resid, se=se, vcov=vcov_hat, X=X, fitted=fitted)
 }
 
-percentages(data$Facebookhours) # call the use defined function `percentages` on the Facebookhours data
+# Assign the result to an object named `res`
+res <- ols(x = c("workingday","weathersit","atemp","hum","windspeed"), y = y, data = Q4_2011)
 ```
 
-**`RANGE`**
-
-1. Write a function `RANGE` to calculate the spread of the values in the percentage of `Facebookhours` spent per day (Hint: use the functions `min()` and `max()`).
-2. In addition, calculate the `median` of the values within the `RANGE` function. Return both results.
-
+Short for what is included:
 ```{r}
-RANGE <- function(x){                # takes on only one argument x (the data)
-  res <- (x/24)*100                  # recycle the result from the previous function, transform data values into percentages
-  spread <- max(res) - min(res)      # calculatae the spread of res (the tranformed data)
-  Median <- median(res)              # calculate the median of res (the transformed data)
-  list(Median=Median, Spread=spread) # Name the elements in the list
-}
-
-RANGE(data$Facebookhours)            # call the user defined funtion `RANGE` on the facebookhours data vector
+names(res)
 ```
 
-**`one.sample`**
-
-1. Write a function `one.sample` to calculate a [`one-sample t-statistic`](https://en.wikipedia.org/wiki/Student%27s_t-test) to test the null hypothesis that the population mean  is `x`, where `x` can be specified by the user.
-2. Apply this function to `Achievement`, `Facebookhours` and `No.Friends`.
-
-**NOTE:** the formula is $(\bar{y} - x) / (\hat{\sigma}_y / \sqrt{n_y})$
+What is type is the output?
 
 ```{r}
-one.sample <- function(data=data, x=0){  # takes on two arguments: the data and the population mean x (provided default value 0)
-  denominator <- sqrt(var(data)/ length(data)) # note sqrt of variance = standard deviation
-  nominator <- mean(data) - x
-  t.value <- nominator/denominator
-  return(t.value)
-}
-
-one.sample(data$Facebookhours)
+typeof(res)
 ```
 
-More advanced (statistical) solution
+Get a full overview of the listing
 ```{r}
-one.sample <- function(data=data, x=0){          # takes on two arguments: the data and the population mean x (provided default value 0)
-  denominator <- sqrt(var(data)/ length(data))   # note sqrt of variance = standard deviation
-  nominator <- mean(data) - x
-  t.value <- nominator/denominator
-  df <- length(data)-1                           # calculate the degrees of freedom (n-1)
-  p.value <- 2*pt(t.value, df, lower.tail=FALSE) # calculate the p.value (t.value is t-distributed)
-  list(t.value = t.value, df=df, p.value=p.value)
+str(res)
+```
+
+Write a function for deriving a coefficient table
+
+```{r}
+summary.ols <- function(x = x){
+  # data.frame makes the output kable() fit!
+  data.frame("Estimate" = x$beta, 
+             "Std.Error" = x$se, 
+             "t.value" = x$beta/x$se, 
+             "p.value" = 2*pnorm(-abs(x$beta/x$se))) # Note: abs() avoids control structures (i.e. differentiating between negative and positive t.values)
 }
 
-one.sample(data$Facebookhours)
+round(summary.ols(res),4)
+```
+
+You can also add significance codes: 
+
+```{r}
+summary.ols <- function(x = x){
+  sig <- 2*pnorm(-abs(x$beta/x$se))
+  codes <- ifelse(sig <= 0.01, paste("**"), ifelse(sig <= 0.05, paste("*"),""))               
+  data.frame("Estimate" = x$beta, 
+             "Std.Error" = x$se, 
+             "t.value" = x$beta/x$se, 
+             "p.value" = sig, 
+             "Sig." = codes)
+}
+summary.ols(res) # note: rounding is now no longer that easy (same problem holds for the ordinary summary function)
+```
+
+### Classes and methods
+
+Compare to the built-in function `lm()`
+```{r}
+res.lm <- lm(cnt ~ workingday + weathersit + atemp + hum + windspeed, data = Q4_2011)
+```
+
+Short for what is included:
+```{r}
+names(res.lm)
+```
+
+What type is the output?
+
+```{r}
+typeof(res.lm)
+```
+
+Get a full overview of the listing (looks familiar)
+
+```{r}
+str(res.lm)
+```
+
+```{r}
+summary(res.lm)
+```
+
+What is then the difference?
+```{r}
+class(res.lm)
+```
+
+```{r}
+class(res)
+```
+
+We can also assign our own class. Why should we care?
+
+```{r}
+methods(summary)
 ```
