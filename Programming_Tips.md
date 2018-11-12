@@ -130,7 +130,7 @@ What are the reasons?
 
 ## Over-vectorizing
 
-Improving human efficiency by shortening the time spent on writting code using the **apply** family of functions.
+Improving human efficiency by shortening the time spent on writting code using the **apply** family of functions (to express a simple loop more compactly).
 
 | function | Input | Output |
 |----------|------------------------|------------------------|
@@ -138,9 +138,35 @@ Improving human efficiency by shortening the time spent on writting code using t
 | `lapply()` | list or vector | list |
 | `sapply()` | list or vector | vector, matrix or list |
 | `vapply()` | list or vector | vector, matrix or list |
-| `tapply() | data.frame, categories | array or list |
+| `tapply()` | data.frame, categories | array or list |
+
+* The `apply()` function is used for applying functions to the rows or columns of matrices or dataframes. 
+Often you want to apply a function across one of the margins of a matrix – margin `1` being the rows and margin `2` the columns. 
+
+For example:
+```{r}
+X<-matrix(1:24,nrow=4)
+```
+Row totals
+```{r}
+apply(X,1,sum)
+```
+Column totals
+```{r}
+apply(X,2,sum)
+```
+
+You can supply your own function definition within apply like this:
+```{r}
+apply(X,1,function(x) x^2+x)
+```
+
+* `tapply()` applies a function to each bit of a partition of a data frame (alternatives are `by()` and `aggregate()`).
 
 
-# Usefuls ressources
+
+*  `sapply()`  *simplifies* the output of `lapply()`. But the simplification that you get may not be the simplification you expect and makes `sapply()` not suitable to be used inside of functions. The `vapply()` function is sometimes a safer alternative.
+
+# (Usefull) ressources
 
 * [The R-inferno by Patrick Burns](https://www.burns-stat.com/documents/books/the-r-inferno/)
