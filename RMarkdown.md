@@ -141,6 +141,6 @@ Features:
 - `smaller: true` (smaller text)
 - `transition: default` (transition speed: `slower`, `faster`, or a numeric value with a number of seconds)
 - `|` add subtitle to a slide or section 
-- `logo: logo.png (adding a logo)
+- `logo: logo.png` (adding a logo)
 
 **NOTE:** Images and tables will always be placed on new slides (togehter with the slide header and image/table caption). 
