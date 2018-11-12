@@ -22,7 +22,7 @@ order: 1
  
 # 1. Markdown for formatted text
 
-Markdown is a set of conventions for formatting *plaintext* (the regular alphabet, with a few familiar symbols, like asterisks  ( * ) and backticks (` `)). Allows controlling the display of the text:
+**Markdown** is a set of conventions for formatting *plaintext* (the regular alphabet, with a few familiar symbols, like asterisks  ( * ) and backticks (` `)). Allows controlling the display of the text:
 
 - bold and italics
 - organizing lists
@@ -33,11 +33,11 @@ Markdown is a set of conventions for formatting *plaintext* (the regular alphabe
 
 # 2. knitr for embedded R code
 
-The knitr package extends the basic Markdown syntax to include chunks of executable R code.
+The **knitr** package extends the basic Markdown syntax to include chunks of executable R code.
 
 *knitr guide*: Toolbar > **Help** > **Markdown Quick Reference**
 
-- When *rendering* the document, knitr will run the code and append the results to the code chunk.
+- When rendering the document later, **knitr** will run the code and append the results to the code chunk.
 - Provides formatting and syntax highlighting to both the code and its results.
 
 ## Code chunk options
@@ -54,7 +54,7 @@ The knitr package extends the basic Markdown syntax to include chunks of executa
 
 # 3. YAML for render parameters
 
-The YAML header controls how R Markdown renders the `.Rmd` file.
+The **YAML header** controls how R Markdown renders the `.Rmd` file.
 
 ## Documents
 
@@ -64,7 +64,7 @@ The YAML header controls how R Markdown renders the `.Rmd` file.
 - `output: html_notebook` (generates an html notebook)
 
 **NOTE:**
-* Notebooks are **previewed**. (A preview is a rendered html copy of the content displayed in the editor. Consequently, unlike Knit, Preview does not run any R code chunks. Instead, the output of the chunk - when it was last run in the editor - is displayed.)
+* Notebooks are **previewed**. (A preview is a rendered html copy of the content displayed in the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk - when it was last run in the editor - is displayed.)
 * For R Markdown documents, all the code is sent to the console at once, but for R Notebooks, only one line at a time is sent. Allows execution to stop if a line raises an error.
 
 ### Table of contents 
