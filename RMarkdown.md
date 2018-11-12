@@ -202,4 +202,83 @@ The line of code that caused the error havs a red indicator in the editor’s gu
 ![](Ressources/Markdown15.png)
 
 
+# (Useful) ressources
+
+- https://rmarkdown.rstudio.com
+- https://bookdown.org/yihui/rmarkdown/
+
+
+# Tricks to obtain nicer output
+
+Function `kable()` from package `knitr` takes a matrix or data frame object and turns it into a nicely formatted table for use with R Markdown.
+
+```{r}
+# create some random sample data
+data <- matrix(rnorm(1000000, mean=0, sd=10), nrow = 100000, ncol = 10)
+```
+
+Using the `knitr` package
+```{r eval=FALSE}
+knitr::kable(summary(data))
+```
+
+```{r, eval=FALSE}
+# Creating a summary table
+df <- rbind(colMeans(data),colSums(data),dim(data)[1])
+rownames(df) <- c("Means","Sums","N")
+knitr::kable(df)
+```
+
+Using the `kableExtra` package
+```{r, eval=FALSE}
+library(kableExtra)
+
+# HTML table
+kable(df, format = "html", caption = "Demo Table") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  add_footnote(c("table footnote"))
+
+# LaTeX Table
+kable(df, format = "latex", booktabs = T, caption = "Demo Table") %>%
+  kable_styling(latex_options = c("striped", "hold_position"), full_width = F) %>%
+  add_footnote(c("table footnote"))
+```
+
+Using the `stargazer` package (for more settings see `?stargazer`)
+```{r, eval=FALSE}
+library(stargazer)
+
+# HTML table
+stargazer(data, type = "html", digits = 2,
+          summary.stat = c("mean","sd","median","min", "max"))
+```
+
+Using the `formattable` package
+```{r}
+# read in the facebook data
+data <- read.csv2("facebook_data.csv")
+# overriding the colnames
+colnames(data) <- c("ID", "Achievement", "Facebookhours", "No.Friends")
+
+library(formattable)
+
+# Print out the first 10 observations
+formattable(data[1:10,])
+```
+
+The function `formattable()` of the `formattable` add-on package calls `knitr::kable()` internally to translate data frame to HTML code.
+
+```{r}
+Adding **orange** color codes for the academic achievements. 
+Adding a **green bar** (like a barchart) for the number of facebook hours spent.
+
+formattable(data[1:10,], list(
+  Achievement = color_tile("white", "orange"),
+  Facebookhours = color_bar("lightgreen"),
+  No.Friends = color_bar("lightblue")
+))
+```
+
+
+
 
