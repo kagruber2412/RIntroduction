@@ -19,7 +19,7 @@ order: 1
 2. **knitr** for embedded R code
 3. **YAML** for render parameters
 
-## 1. Markdown for formatted text
+# 1. Markdown for formatted text
 
 Markdown is a set of very easy to use conventions for formatting *plain text*:
 
@@ -32,7 +32,7 @@ Markdown is a set of very easy to use conventions for formatting *plain text*:
 
 Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks ( * ) and backticks (` `). All you have control over is the display of the text—stuff like making things bold, creating headers, and organizing lists.
 
-## 2. knitr for embedded R code
+# 2. knitr for embedded R code
 
 The knitr package extends the basic markdown syntax to include chunks of executable R code.
 
@@ -41,7 +41,7 @@ The knitr package extends the basic markdown syntax to include chunks of executa
 - When *rendering* the document, knitr will run the code and append the results to the code chunk.
 - Provides formatting and syntax highlighting to both the code and its results.
 
-### Code chunk options
+## Code chunk options
 
 - `name` (chunk label, not necessarily requored)
 - `echo = TRUE` (sisplay the code chunk or just show the results?)
@@ -53,36 +53,35 @@ The knitr package extends the basic markdown syntax to include chunks of executa
 - `fig.height`, `fig.width` (specify height and width of the figure)
 - `out.width`, `out.height (width/height to which plots are scaled in the final document)
 
-## 3. YAML for render parameters
+# 3. YAML for render parameters
 
 The YAML header controls how rmarkdown renders the `.Rmd` file.
 
-
-# Dynamic documents with R Markdown
+## Documents
 
 - `output: html_document` (generates html document, default)
 - `output: pdf_document` (generates pdf document)
 - `output: word_document` (generates word document)
 
-## Table of contents 
+### Table of contents 
 
 - `toc: true` (generates the table of contents)
 - `toc_depth: 2` (table of contents includes sections and subsections)
 - `number_sections: true` (include section numberings)
 
-## Figure options
+### Figure options
 
 - `fig_width: 7` (controls the default figure width)
 - `fig_height: 6` (controls the default figure height)
 - `fig_caption: true` (controls whether figures are rendered with captions)
 
-## Data frame printing
+### Data frame printing
 
 - `df_print: default`
 - `df_print: kable`
 - `df_print: tibble`
 
-## Syntax highlighting
+### Syntax highlighting
 
 - `highlight: default`
 - `highlight: tango`
@@ -92,7 +91,62 @@ The YAML header controls how rmarkdown renders the `.Rmd` file.
 - ...
 - `highlight: null` (prevents syntax highlighting)
 
-### Getting started
+## Presentations
+
+**Built-in formats**
+
+- `output: powerpoint_presentation` (ppt document)
+- `output: beamer_presentation` (pdf presentation)
+- `output: ioslides_presentation` (html presentation)
+
+**Usage**
+
+- `#`, `##` headers indicate a new slide
+- `---` indicates a new slide without header
+
+### Power Point
+
+- `reference_doc: my-styles.pptx` (customizes the appearance of the presentation by passing a custom reference document)
+
+### Beamer
+
+Appearance features:
+
+- `theme: "default"`
+- `theme: "AnnArbor"`
+- `theme: "Berlin"`
+- `theme: "CambridgeUS"`
+- `theme: "Copenhagen"`
+- `theme: "..."`
+
+Colortheme features:
+
+- `colortheme: "default"`
+- `colortheme: "albatross"`
+- `colortheme: "beetle"`
+- `colortheme: "dolphin"`
+- `colortheme: "..."`
+
+See also:
+
+https://hartwork.org/beamer-theme-matrix/
+
+### Ioslides
+
+Features: 
+
+- `incremental: true` (incremental bullets, e.g., `> -` Bullet 1)
+- `widescreen: true` (wider form factor)
+- `smaller: true` (smaller text)
+- `transition: default` (transition speed: `slower`, `faster`, or a numeric value with a number of seconds)
+- `|` add subtitle to a slide or section 
+- `logo: logo.png` (adding a logo)
+
+**NOTE:** Images and tables will always be placed on new slides (togehter with the slide header and image/table caption). 
+
+
+
+# Getting started
 
 1. Open a new R Markdown file: Toolbar > **File** > **New File** > **R Markdown**
 
@@ -150,56 +204,4 @@ The line of code that caused the error havs a red indicator in the editor’s gu
 
 
 
-# Dynamic presentations with RMarkdown
-
-**Built-in formats**
-
-- `output: powerpoint_presentation` (ppt document)
-- `output: beamer_presentation` (pdf presentation)
-- `output: ioslides_presentation` (html presentation)
-
-**Usage**
-
-- `#`, `##` headers indicate a new slide
-- `---` indicates a new slide without header
-
-## Power Point
-
-- `reference_doc: my-styles.pptx` (customizes the appearance of the presentation by passing a custom reference document)
-
-## Beamer
-
-Appearance features:
-
-- `theme: "default"`
-- `theme: "AnnArbor"`
-- `theme: "Berlin"`
-- `theme: "CambridgeUS"`
-- `theme: "Copenhagen"`
-- `theme: "..."`
-
-Colortheme features:
-
-- `colortheme: "default"`
-- `colortheme: "albatross"`
-- `colortheme: "beetle"`
-- `colortheme: "dolphin"`
-- `colortheme: "..."`
-
-See also:
-
-https://hartwork.org/beamer-theme-matrix/
-
-## Ioslides
-
-Features: 
-
-- `incremental: true` (incremental bullets, e.g., `> -` Bullet 1)
-- `widescreen: true` (wider form factor)
-- `smaller: true` (smaller text)
-- `transition: default` (transition speed: `slower`, `faster`, or a numeric value with a number of seconds)
-- `|` add subtitle to a slide or section 
-- `logo: logo.png` (adding a logo)
-
-**NOTE:** Images and tables will always be placed on new slides (togehter with the slide header and image/table caption). 
 
