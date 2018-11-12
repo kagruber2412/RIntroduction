@@ -5,8 +5,6 @@ category: getting-started
 order: 1
 ---
 
-# Introduction
-
 - Easy-to-write / easy-to-read plain text format for making dynamic documents with R.
 - Source code for rich, reproducible documents (contains formatted text and chunks of embedded R code)
 - Allows documentation in a variety of formats.
@@ -17,7 +15,7 @@ R Markdown reports rely on three frameworks:
 2. **knitr** for embedded R code
 3. **YAML** for render parameters
 
-# Markdown formatted text
+## Markdown formatted text
 
 Markdown is a set of very easy to use conventions for formatting plain text:
 
@@ -28,7 +26,7 @@ Markdown is a set of very easy to use conventions for formatting plain text:
 
 See: Toolbar > **Help** > **Markdown Quick Reference**
 
-# knitr for embedded R code
+## knitr for embedded R code
 
 The knitr package extends the basic markdown syntax to include chunks of executable R code.
 
@@ -37,7 +35,7 @@ See: Toolbar > **Help** > **Markdown Quick Reference**
 - When *rendering* the document, knitr will run the code and append the results to the code chunk.
 - Provides formatting and syntax highlighting to both the code and its results.
 
-## Code chunk options
+### Code chunk options
 
 - `name` (chunk label, not necessarily requored)
 - `echo = TRUE` (sisplay the code chunk or just show the results?)
@@ -49,13 +47,12 @@ See: Toolbar > **Help** > **Markdown Quick Reference**
 - `fig.height`, `fig.width` (specify height and width of the figure)
 - `out.width`, `out.height (width/height to which plots are scaled in the final document)
 
-# YAML for render parameters
+## YAML for render parameters
 
 The YAML header controls how rmarkdown renders the `.Rmd` file.
 
-# Dynamic documents
 
-## Document
+# Dynamic documents
 
 - `output: html_document` (generates html document, default)
 - `output: pdf_document` (generates pdf document)
@@ -89,7 +86,7 @@ The YAML header controls how rmarkdown renders the `.Rmd` file.
 - ...
 - `highlight: null` (prevents syntax highlighting)
 
-## Getting started
+### Getting started
 
 1. Open a new R Markdown file: Toolbar > **File** > **New File** > **R Markdown**
 
@@ -108,22 +105,57 @@ Rmarkdown will use the pandoc program to transform the file into a new format. R
 **NOTE:** The selection you make will override the output!
 
 
+2. Render the file.
+
+* Notebooks are **previewed**.
+* Preview is a rendered copy of the Markdown output of the document.
+
+<img src="Ressources/Markdown16.png"  height="350" width="800">
+
+
+## Executing Code
+
+* Using the green triangle button on the toolbar of a code: `Run Current Chunk`
+
+<img src="Ressources/Markdown9.png"  height="250" width="800">
+
+* Using the hotkey combination `Ctrl + Enter` (macOS: `Cmd + Enter`)
+
+* Using the editor toolbar
+
+<img src="Ressources/Markdown10.png"  height="50" width="200">
+
+After code execution, an indicator will appear in the gutter to show the execution progress. Sent lines are marked in green, lines that have not yet been sent are marked with light green. 
+
+<img src="Ressources/Markdown12.png"  height="350" width="800">
+
+Output appears beneath the code chunk that produced it.
+
+<img src="Ressources/Markdown13.png"  height="350" width="800">
+
+## Errors 
+
+Execution stops and the remaining lines of that chunk (and any chunks that have not yet been run) are not executed.
+
+The line of code that caused the error havs a red indicator in the editor’s gutter.
+
+<img src="Ressources/Markdown15.png"  height="350" width="800">
+
+
+
 
 # Dynamic presentations
-
-- Generate slides dynamically
-- Embed R code into presentations
-
-**Usage**
-
-- `#`, `##` headers indicate a new slide
-- `---` indicates a new slide without header
 
 **Built-in formats**
 
 - `output: powerpoint_presentation` (ppt document)
 - `output: beamer_presentation` (pdf presentation)
 - `output: ioslides_presentation` (html presentation)
+
+**Usage**
+
+- `#`, `##` headers indicate a new slide
+- `---` indicates a new slide without header
 
 ## Power Point
 
