@@ -7,30 +7,27 @@ order: 1
 
 # Markdown and R Markdown
 
-- Markdown is a simple (easy-to-write / easy-to-read) text-based markup language using *plaintext* formatting syntax.
+- **Markdown** is a simple (easy-to-write / easy-to-read) text-based markup language using *plaintext* formatting syntax.
+- Is quickly becoming a writting standard for academics and scientists (e.g. GitHub uses Markdown). 
 
-- can be easily shared between computers, mobile phones, and people. It’s quickly becoming the writing standard for academics, scientists, writers, and many more. Websites like GitHub and reddit use Markdown to style their comments.
-
-- R Markdown is a variation of Markdown that allows documentation in a variety of formats for creating dynamic and reproducible documents in R (contains formatted text and chunks of embedded R code).
-
-- R Markdown reports rely on three frameworks:
+- **R Markdown** is an R package, and a set of tools embedded in RStudio, that facilitates the construction of documents that combine formatted text, chunks and embedded R code. R Markdown documents rely on three frameworks:
 
 1. **Markdown** for formatted text
 2. **knitr** for embedded R code
 3. **YAML** for render parameters
 
+- Allows documentation in a variety of formats for creating dynamic and reproducible documents in R .
+ 
 # 1. Markdown for formatted text
 
-Markdown is a set of very easy to use conventions for formatting *plaintext*:
+Markdown is a set of conventions for formatting *plaintext* (the regular alphabet, with a few familiar symbols, like asterisks  ( * ) and backticks (` `)). Allows controlling the display of the text:
 
-- bold and italic text
-- lists
-- headers
-- hyperlinks
+- bold and italics
+- organizing lists
+- creating headers
+- adding hyperlinks
 
 *Syntax guide*: Toolbar > **Help** > **Markdown Quick Reference**
-
-Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks ( * ) and backticks (` `). All you have control over is the display of the text—stuff like making things bold, creating headers, and organizing lists.
 
 # 2. knitr for embedded R code
 
