@@ -145,7 +145,7 @@ Often you want to apply a function across one of the margins of a matrix – mar
 
 For example:
 ```{r}
-X<-matrix(1:24,nrow=4)
+X <- matrix(1:24,nrow=4)
 ```
 Row totals
 ```{r}
@@ -161,11 +161,34 @@ You can supply your own function definition within apply like this:
 apply(X,1,function(x) x^2+x)
 ```
 
+* The `apply()` function has a for loop in its definition. The `lapply()` function buries the loop, it takes a function, applies it to each element in a list, and returns the results in the form of a list (since data frames are also lists, `lapply()` is useful to apply an operation on each column/row of a data frame).
+
+Row totals
+```{r}
+lapply(1:dim(X)[1], function(l){sum(X[l,])})
+```
+Column totals
+```{r}
+lapply(1:dim(X)[2], function(l){sum(X[,l])})
+```
+
+**NOTE**: use `unlist()` to convert the output from a list to a vector.
+
+```{r}
+unlist(lapply(1:dim(X)[2], function(l){sum(X[,l])}))
+```
+
+*  `sapply()` *simplifies* the output of `lapply()`. But the simplification that you get may not be the simplification you expect and makes `sapply()` not suitable to be used inside of functions. The `vapply()` function is sometimes a safer alternative.
+
 * `tapply()` applies a function to each bit of a partition of a data frame (alternatives are `by()` and `aggregate()`).
 
+```{r}
+tapply(mtcars$mpg, mtcars$cyl, mean) 
+```
 
-
-*  `sapply()`  *simplifies* the output of `lapply()`. But the simplification that you get may not be the simplification you expect and makes `sapply()` not suitable to be used inside of functions. The `vapply()` function is sometimes a safer alternative.
+```{r}
+tapply(mtcars$mpg, list(mtcars$cyl, mtcars$am), mean) 
+```
 
 # (Usefull) ressources
 
