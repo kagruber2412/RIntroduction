@@ -1,3 +1,10 @@
+---
+title: "RMarkdown"
+sidebar: toc
+category: getting-started
+order: 1
+---
+
 # Introduction
 
 - Easy-to-write / easy-to-read plain text format for making dynamic documents with R.
