@@ -1,5 +1,5 @@
 ---
-title: "RMarkdown"
+title: "R Markdown"
 sidebar: toc
 category: getting-started
 order: 1
@@ -21,7 +21,7 @@ order: 1
 
 # 1. Markdown for formatted text
 
-Markdown is a set of very easy to use conventions for formatting *plain text*:
+Markdown is a set of very easy to use conventions for formatting *plaintext*:
 
 - bold and italic text
 - lists
@@ -55,7 +55,7 @@ The knitr package extends the basic markdown syntax to include chunks of executa
 
 # 3. YAML for render parameters
 
-The YAML header controls how rmarkdown renders the `.Rmd` file.
+The YAML header controls how R Markdown renders the `.Rmd` file.
 
 ## Documents
 
