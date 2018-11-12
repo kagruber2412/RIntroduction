@@ -128,7 +128,7 @@ sum.time
 
 What are the reasons?
 * No need to create a container object.
-* `lapply()` and `rowSums()` are based on (more) internal C++ code.
+* `lapply()` and `rowSums()` are based on (more) internal C code.
 
 
 ## Over-vectorizing
