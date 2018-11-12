@@ -5,8 +5,6 @@ category: getting-started
 order: 1
 ---
 
-# Data import
-
 ## Step 1: Prepartion
 
 You need to first make sure that your data is well prepared to be imported. Here’s a list of some best practices 
