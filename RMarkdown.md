@@ -7,7 +7,7 @@ order: 1
 
 # Markdown and R Markdown
 
-- Markdown is a simple (easy-to-write / easy-to-read) text-based markup language with *plain text* formatting syntax.
+- Markdown is a simple (easy-to-write / easy-to-read) text-based markup language using *plaintext* formatting syntax.
 
 - can be easily shared between computers, mobile phones, and people. It’s quickly becoming the writing standard for academics, scientists, writers, and many more. Websites like GitHub and reddit use Markdown to style their comments.
 
@@ -15,7 +15,7 @@ order: 1
 
 - R Markdown reports rely on three frameworks:
 
-1. **markdown** for formatted text
+1. **Markdown** for formatted text
 2. **knitr** for embedded R code
 3. **YAML** for render parameters
 
@@ -34,7 +34,7 @@ Plaintext is just the regular alphabet, with a few familiar symbols, like asteri
 
 # 2. knitr for embedded R code
 
-The knitr package extends the basic markdown syntax to include chunks of executable R code.
+The knitr package extends the basic Markdown syntax to include chunks of executable R code.
 
 *knitr guide*: Toolbar > **Help** > **Markdown Quick Reference**
 
