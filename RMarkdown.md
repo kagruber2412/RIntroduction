@@ -183,11 +183,9 @@ R Markdown will use the **pandoc** program to transform the file into a new form
 
 After code execution, an indicator will appear in the gutter to show the execution progress. Sent lines are marked in green, lines that have not yet been sent are marked with light green. 
 
-![](Ressources/Markdown12.png)
+![](Ressources/Markdown12b.png)
 
 Output appears beneath the code chunk that produced it.
-
-![](Ressources/Markdown13.png)
 
 Output can be removed by using:
 
@@ -199,7 +197,7 @@ Execution stops and the remaining lines of that chunk (and any chunks that have 
 
 The line of code that caused the error havs a red indicator in the editor’s gutter.
 
-![](Ressources/Markdown15.png)
+![](Ressources/Markdown15b.png)
 
 
 # (Useful) ressources
