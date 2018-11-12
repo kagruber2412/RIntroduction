@@ -5,11 +5,15 @@ category: getting-started
 order: 1
 ---
 
-- Easy-to-write / easy-to-read plain text format for making dynamic documents with R.
-- Source code for rich, reproducible documents (contains formatted text and chunks of embedded R code)
-- Allows documentation in a variety of formats.
+# Markdown and R Markdown
 
-R Markdown reports rely on three frameworks:
+- Markdown is a simple (easy-to-write / easy-to-read) text-based markup language with *plain text* formatting syntax.
+
+- can be easily shared between computers, mobile phones, and people. It’s quickly becoming the writing standard for academics, scientists, writers, and many more. Websites like GitHub and reddit use Markdown to style their comments.
+
+- R Markdown is a variation of Markdown that allows documentation in a variety of formats for creating dynamic and reproducible documents in R (contains formatted text and chunks of embedded R code).
+
+- R Markdown reports rely on three frameworks:
 
 1. **markdown** for formatted text
 2. **knitr** for embedded R code
@@ -17,20 +21,22 @@ R Markdown reports rely on three frameworks:
 
 ## Markdown formatted text
 
-Markdown is a set of very easy to use conventions for formatting plain text:
+Markdown is a set of very easy to use conventions for formatting *plain text*:
 
 - bold and italic text
 - lists
 - headers
 - hyperlinks
 
-See: Toolbar > **Help** > **Markdown Quick Reference**
+*Syntax guide*: Toolbar > **Help** > **Markdown Quick Reference**
+
+Plaintext is just the regular alphabet, with a few familiar symbols, like asterisks ( * ) and backticks (` `). All you have control over is the display of the text—stuff like making things bold, creating headers, and organizing lists.
 
 ## knitr for embedded R code
 
 The knitr package extends the basic markdown syntax to include chunks of executable R code.
 
-See: Toolbar > **Help** > **Markdown Quick Reference**
+*knitr guide*: Toolbar > **Help** > **Markdown Quick Reference**
 
 - When *rendering* the document, knitr will run the code and append the results to the code chunk.
 - Provides formatting and syntax highlighting to both the code and its results.
@@ -52,7 +58,7 @@ See: Toolbar > **Help** > **Markdown Quick Reference**
 The YAML header controls how rmarkdown renders the `.Rmd` file.
 
 
-# Dynamic documents
+# Dynamic documents with RMarkdown
 
 - `output: html_document` (generates html document, default)
 - `output: pdf_document` (generates pdf document)
@@ -144,7 +150,7 @@ The line of code that caused the error havs a red indicator in the editor’s gu
 
 
 
-# Dynamic presentations
+# Dynamic presentations with RMarkdown
 
 **Built-in formats**
 
