@@ -7,10 +7,12 @@ order: 1
 
 # Markdown and R Markdown
 
-- **Markdown** is a simple (easy-to-write / easy-to-read) text-based markup language using *plaintext* formatting syntax.
+**Markdown**
+- A simple (easy-to-write / easy-to-read) text-based markup language using *plaintext* formatting syntax.
 - Is quickly becoming a writting standard for academics and scientists (e.g. GitHub uses Markdown). 
 
-- **R Markdown** is an R package, and a set of tools embedded in RStudio, that facilitates the construction of documents that combine formatted text, chunks and embedded R code. R Markdown documents rely on three frameworks:
+**R Markdown**
+- An R package, and a set of tools embedded in RStudio, that facilitates the construction of documents that combine formatted text, chunks and embedded R code. R Markdown documents rely on three frameworks:
 
 1. **Markdown** for formatted text
 2. **knitr** for embedded R code
@@ -59,6 +61,11 @@ The YAML header controls how R Markdown renders the `.Rmd` file.
 - `output: html_document` (generates html document, default)
 - `output: pdf_document` (generates pdf document)
 - `output: word_document` (generates word document)
+- `output: html_notebook` (generates an html notebook)
+
+**NOTE:**
+* Notebooks are **previewed**. (A preview is a rendered html copy of the content displayed in the editor. Consequently, unlike Knit, Preview does not run any R code chunks. Instead, the output of the chunk - when it was last run in the editor - is displayed.)
+* For R Markdown documents, all the code is sent to the console at once, but for R Notebooks, only one line at a time is sent. Allows execution to stop if a line raises an error.
 
 ### Table of contents 
 
@@ -142,7 +149,6 @@ Features:
 **NOTE:** Images and tables will always be placed on new slides (togehter with the slide header and image/table caption). 
 
 
-
 # Getting started
 
 1. Open a new R Markdown file: Toolbar > **File** > **New File** > **R Markdown**
@@ -159,36 +165,29 @@ Rmarkdown will use the pandoc program to transform the file into a new format. R
 
 ![](Ressources/Markdown4.png)
 
-**NOTE:** The selection you make will override the output!
-
-
-2. Render the file.
-
-* Notebooks are **previewed**.
-* Preview is a rendered copy of the Markdown output of the document.
-
-<img src="Ressources/Markdown16.png"  height="350" width="800">
+**NOTE:** 
+* The selection you make will override the output!
 
 
 ## Executing Code
 
 * Using the green triangle button on the toolbar of a code: `Run Current Chunk`
 
-<img src="Ressources/Markdown9.png"  height="250" width="800">
+![](Ressources/Markdown9.png)
 
 * Using the hotkey combination `Ctrl + Enter` (macOS: `Cmd + Enter`)
 
 * Using the editor toolbar
 
-<img src="Ressources/Markdown10.png"  height="50" width="200">
+![](Ressources/Markdown10.png)
 
 After code execution, an indicator will appear in the gutter to show the execution progress. Sent lines are marked in green, lines that have not yet been sent are marked with light green. 
 
-<img src="Ressources/Markdown12.png"  height="350" width="800">
+![](Ressources/Markdown12.png)
 
 Output appears beneath the code chunk that produced it.
 
-<img src="Ressources/Markdown13.png"  height="350" width="800">
+![](Ressources/Markdown13.png)
 
 ## Errors 
 
@@ -196,9 +195,7 @@ Execution stops and the remaining lines of that chunk (and any chunks that have 
 
 The line of code that caused the error havs a red indicator in the editor’s gutter.
 
-<img src="Ressources/Markdown15.png"  height="350" width="800">
-
-
+![](Ressources/Markdown15.png)
 
 
 
