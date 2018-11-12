@@ -144,3 +144,21 @@ Features:
 - `logo: logo.png` (adding a logo)
 
 **NOTE:** Images and tables will always be placed on new slides (togehter with the slide header and image/table caption). 
+
+# Getting started
+
+1. Open a new R Markdown file: Toolbar > **File** > **New File** > **R Markdown**
+
+![](Ressources/Markdown1.png)
+
+<img src="Ressources/Markdown2.png"  height="250" width="600">
+
+A template R Markdown script is provided. This includes the set up information at the top of the page in between two lines of three dashes (YAML settings used by knitr during rendering to produce the file). 
+
+2. Render the file.
+
+Rmarkdown will use the pandoc program to transform the file into a new format. Rmarkdown will preserve the text, code results, and formatting contained in the original `.Rmd` file.
+
+<img src="Ressources/Markdown4.png"  height="100" width="150">
+
+**NOTE:** The selection you make will override the output!
