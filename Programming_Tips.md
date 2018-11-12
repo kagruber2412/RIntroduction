@@ -5,7 +5,7 @@ category: Programming
 order: 1
 ---
 
-## Failing to vectorize:
+## Failing to vectorize
 
 ```{r}
 c(log(1), log(2))
@@ -42,9 +42,14 @@ system.time(x <- log(x))
 
 **Excessive looping makes your code slow!**
 
-If vectorization is impossible: Put as much outside of loops as possible!
-* Avoid creating (the same) sequence objects in each iteration - create the sequence first and reuse it to save computing time.
-* Check conditions (if statements) before (!) running the loop. Keep the iteration number low by running the loop only on the `TRUE` conditions.
+If vectorization is impossible: 
+
+* Put as much outside of loops as possible!
+  + Avoid creating (the same) sequence objects in each iteration - create the sequence first and reuse it to save computing time.
+  
+* Reduce number of iterations!
+  + Check conditions (if statements) before (!) running the loop. Keep the iteration number low by running the loop only on the `TRUE` conditions.
+  
 * Use `data.table` objects to reduce memory overload (if you have a substantial amount of data and speed is an issue). 
 * Run those operations that are not vectorized in an **apply** statement. 
 
