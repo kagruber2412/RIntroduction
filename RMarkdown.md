@@ -161,7 +161,7 @@ A template R Markdown script is provided. This includes the set up information a
 
 2. Render the file.
 
-Rmarkdown will use the pandoc program to transform the file into a new format. Rmarkdown will preserve the text, code results, and formatting contained in the original `.Rmd` file.
+R Markdown will use the **pandoc** program to transform the file into a new format. R Markdown will preserve the text, code results, and formatting contained in the original `.Rmd` file.
 
 ![](Ressources/Markdown4.png)
 
@@ -171,7 +171,7 @@ Rmarkdown will use the pandoc program to transform the file into a new format. R
 
 ## Executing Code
 
-* Using the green triangle button on the toolbar of a code: `Run Current Chunk`
+* Using the green triangle button on the toolbar of a code chunk: `Run Current Chunk`
 
 ![](Ressources/Markdown9.png)
 
@@ -188,6 +188,10 @@ After code execution, an indicator will appear in the gutter to show the executi
 Output appears beneath the code chunk that produced it.
 
 ![](Ressources/Markdown13.png)
+
+Output can be removed by using:
+
+![](Ressources/Markdown14.png)
 
 ## Errors 
 
