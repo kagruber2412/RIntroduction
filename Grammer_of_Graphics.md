@@ -155,6 +155,7 @@ colors()
 
 * **Color palettes**:
    + [ColorBrewer.org](http://colorbrewer2.org)
+   + [Color palette generators](https://htmlcolorcodes.com/resources/best-color-palette-generators/)
 
 Built-in color palettes
 ```{}
