@@ -5,7 +5,7 @@ category: getting-started
 order: 1
 ---
 
-## Why `R`?
+## Why R?
 
 - Very intuitive syntax.
 - Easy to program.
@@ -15,7 +15,7 @@ order: 1
 - Creating reproducible analysis.
 - **It's free**.
 
-## What is `R`?
+## What is R?
 
 - 1990: **`R`** appeared as a free implementation of a dialect of the S language, used as programming language for the undergraduate statistics courses at the University of Auckland, New Zealand.
 - 1995: **`R`**'s source code made available under GNU General Public License version 2.0. 
@@ -25,7 +25,7 @@ order: 1
 
 Today, **`R`** is probably the most widely used software for research in statistical methodology. Also big players like Google, Bank of America, Procter & Gamble, Shell and IBM are using **`R`** for their every day business and the number of companies starts using it steadily increases.
 
-## Where to obtain `R?
+## Where to obtain R?
 
 [cran.r-project.org](https://cran.r-project.org)
 
@@ -147,8 +147,8 @@ mean.sunspot[1]
 
 ## (Interesting) ressources
 
-- (**`R`**-paper)[https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf]
-- (More on **`R`**)[https://cran.r-project.org/doc/FAQ/R-FAQ.html]
+- [**`R`**-paper](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
+- [More on **`R`**](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
 - `help.start()`
 
 Ways of obtaining help 
@@ -165,7 +165,7 @@ Graphic integrated development environments (IDE):
 - Eclipse with StatET
 - Emacs with ESS
 - Vi, Vim and GVim
-- most commonly used (RStudio)[https://www.rstudio.com/]
+- most commonly used [RStudio](https://www.rstudio.com/)
 
 ## A primer on RStudio
 
