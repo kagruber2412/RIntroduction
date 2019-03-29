@@ -100,7 +100,9 @@ lm(Ozone ~ Temp, airquality)
 lm(data = airquality, formula = Ozone ~ Temp)
 ```
 
-Both function calls are equivalent. **`R`** returns the original function call and the estimated model coefficients **on the console**.
+Both function calls are equivalent. 
+
+**`R`** returns the original function call and the estimated model coefficients **on the console**.
 
 **Example:** The boxplot function `boxplot()` for producing a box-and-whisker plot.
 
@@ -147,15 +149,15 @@ mean.sunspot[1]
 
 ## (Interesting) ressources
 
-- [**`R`**-paper](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
-- [More on **`R`**](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
+- [**R**-paper](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
+- [More on **R**](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
 - `help.start()`
 
 Ways of obtaining help 
 
 1. `?function.name` or `help(lm)`
 
-2. `help.search("linear models")
+2. `help.search("linear models")`
 
 
 # R interfaces
