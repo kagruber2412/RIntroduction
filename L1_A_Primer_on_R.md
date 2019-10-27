@@ -19,9 +19,9 @@ order: 1
 
 **Today**: R 3.6.1 (No. extensions: 16,000 +) 
 
-> $\Rightarrow$ Today, R is probably the most widely used open-source software environment for data analysis and statistical graphics in academia and business. 
+> Today, R is probably the most widely used open-source software environment for data analysis and statistical graphics in academia and business. 
 
-> $\Rightarrow$ With over 16.000 extensions the statistical and computational toolkit is huge making the R programming language the lingua franca of data science.
+> With over 16.000 extensions the statistical and computational toolkit is huge making the R programming language the lingua franca of data science.
 
 # Why R?
 
@@ -45,7 +45,7 @@ order: 1
 2 + 2
 ```
 
-\colorbox{red!85}{\textcolor{white}{\textbf{\LARGE{!}}}} If a command is not completed at the end of a line, R will give a continuation prompt **`+`**, by default.
+NOTE! If a command is not completed at the end of a line, R will give a continuation prompt **`+`**, by default.
 
 ```{r}
 2 + 
@@ -110,7 +110,7 @@ Producing a horizontal boxplot in gray of the monthly numbers of sunspots from R
 boxplot(sunspot.month, col="gray", horizontal = TRUE)
 ```
 
-\colorbox{red!85}{\textcolor{white}{\textbf{\LARGE{!}}}} It is easier to remember the name of an argument than its position. If you can not remember the name or the position you can get help by using **`?function.name`** or **`help(function.name)`**.
+NOTE! It is easier to remember the name of an argument than its position. If you can not remember the name or the position you can get help by using **`?function.name`** or **`help(function.name)`**.
 
 ## Actions
 
@@ -139,7 +139,7 @@ Print out the result on the console.
 cat("Error: object 'Mean.sunspot' not found")
 ```
 
-\colorbox{red!85}{\textcolor{white}{\textbf{\LARGE{!}}}} R is **case sensitive**! Capitalisation does matter. Here, `M` and `m` are different symbols and refer to different objects.
+NOTE! R is **case sensitive**! Capitalisation does matter. Here, `M` and `m` are different symbols and refer to different objects.
 
 3. **Subsetting**. Extracting elements from an object. 
 
