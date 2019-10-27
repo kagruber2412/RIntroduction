@@ -5,6 +5,8 @@ category: getting-started
 order: 1
 ---
 
+# What is R?
+
 **1990**: R appeared as a free implementation of a dialect of the _S language_. R was used as programming language for the undergraduate statistics courses at the University of Auckland, New Zealand.
 
 **1995**: R's source codes were made available under _GNU General Public License version 2.0_. 
