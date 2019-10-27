@@ -11,17 +11,17 @@ R has three basic data types:
 
 1(a). **Numeric** (``real numbers''). 
 
-> The two most common numeric types are `double` (double precision floating point numbers) and `integer` (without floating point).
+The two most common numeric types are `double` (double precision floating point numbers) and `integer` (without floating point).
 
 1(b). **Complex** (``real and imaginary numbers'').
 
 2. **Logical** (``boolean''). 
 
-> Reserved words for denoting logical constants are `TRUE` and `FALSE` (and `NA` for missing value). 
+Reserved words for denoting logical constants are `TRUE` and `FALSE` (and `NA` for missing value). 
 
 3. **Character**.
 
-> Data type for storing letters and symbols (strings, text).
+Data type for storing letters and symbols (strings, text).
 
 
 # Data structures
@@ -48,8 +48,6 @@ c(TRUE, FALSE, FALSE)        # logical
 c(1+0i, 2+4i)                # complex
 c("a", "b", "c")             # character
 ```
-
-<br></br>
 
 ## Vector actions
 
@@ -88,7 +86,6 @@ c(dbl, chr)
 
 NOTE! The automatic change of the data type of the resulting vector is called **coercion**. Coercion ensures the same data type for each element in the vector is maintained.
 
-<br></br>
 
 ## Vector arithmetic
 
@@ -151,8 +148,6 @@ NOTE! By default the matrix is filled up column after column (R treats a matrix 
 B <- matrix(a, ncol=2, byrow=TRUE) # matrix filled-up rowwise
 B
 ```
-
-<br></br>
 
 ## Matrix actions
 
