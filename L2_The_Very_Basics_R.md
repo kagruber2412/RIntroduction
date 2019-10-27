@@ -2,7 +2,7 @@
 title: "The very basics"
 sidebar: toc
 category: getting-started
-order: 2
+order: 1
 ---
 
 # Data types
