@@ -52,7 +52,7 @@ NOTE! If a command is not completed at the end of a line, R will give a continua
   2
 ```
 
-Solution: Finish the command or hit \texttt{Esc}.
+Solution: Finish the command or hit **`Esc`**.
 
 ## Functions
 
