@@ -10,7 +10,7 @@ order: 1
 * R is a computer **language** (like C or C++).
 * The _R Graphical User Interface_ (RGui for Windows) / _R Application_ (R.app for Mac OS X) is a terminal-like window that communicates with your computer to interpret the commands written in the R-language 
 
-<img src="./Ressources/RGui.png" width="425" height="350"><img src="./Ressources/Rapp.png" width="425" height="350">
+<img src="./Ressources/RGui.png" width="425" height="300"><img src="./Ressources/Rapp.png" width="425" height="300">
 
 **Interesting:** You can also run the code in a UNIX or BASH window by typing the command \texttt{R}.
 
