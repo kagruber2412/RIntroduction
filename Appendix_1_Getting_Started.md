@@ -12,7 +12,7 @@ order: 1
 
 <img src="./Ressources/RGui.png" width="425" height="300"><img src="./Ressources/Rapp.png" width="425" height="300">
 
-**Interesting:** You can also run the code in a UNIX or BASH window by typing the command \texttt{R}.
+**Interesting:** You can also run the code in a UNIX or BASH window by typing the command **`R`**.
 
 ## Obtaining R:
 
