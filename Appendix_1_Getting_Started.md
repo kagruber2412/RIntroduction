@@ -62,3 +62,39 @@ RStudio offers...
   * easy communication with other softwar and plattforms... (and more)
   
 ![](./Ressources/RStudio_Intro1.png)
+
+**Panel A: R Console**
+
+  * Runs R-code and returns results.
+    
+**Panel B: Workspace management**
+
+  * Environment (list of all objects in the workspace).
+  * History (record of commands executed during the worksession).
+    
+**Panel C: Other functionality**
+
+  * See files in your directory.
+  * View plots.
+  * See list of installed and active packages. 
+  * Access R help.
+
+
+## Script (.R)
+
+* The sequence of commands necessary for analysis is typically **written down** (``scripted'') in textfiles prior to execution.
+
+* Advantages: 
+
+    * Documentation of tasks (allows you and others to reproduce a task).
+    * Automation of repetitive tasks (time saving).
+    * Evaluation of incremental changes.
+
+![](./Ressources/RStudio_Script1.png)
+![](./Ressources/RStudio_Script2.png)
+![](./Ressources/RStudio_Script3.png)
+
+
+
+
+
