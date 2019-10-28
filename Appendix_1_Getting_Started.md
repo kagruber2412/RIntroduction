@@ -37,7 +37,7 @@ order: 1
     * Emacs / Aquamax with ESS (Linux, Mac OS X)
     * Vi, Vim and GVim (Linux)
 
-NOTE! Using Microsoft Word instead of an IDE to write (or save) code is generally a bad idea. Certain keyboard characters, such as quotations “”, are not the same in Word. The difference is largely indistinguishable to the human eye, but will not run in R.
+**NOTE!** Using Microsoft Word instead of an IDE to write (or save) code is generally a bad idea. Certain keyboard characters, such as quotations “”, are not the same in Word. The difference is largely indistinguishable to the human eye, but will not run in R.
 
 ## Obtaining RStudio:
 
@@ -84,13 +84,13 @@ RStudio offers...
 
 * The sequence of commands necessary for analysis is typically **written down** (_scripted_) in textfiles prior to execution.
 
-* Advantages: 
+Advantages: 
 
-    * Documentation of tasks (allows you and others to reproduce a task).
-    * Automation of repetitive tasks (time saving).
-    * Evaluation of incremental changes.
+* Documentation of tasks (allows you and others to reproduce a task).
+* Automation of repetitive tasks (time saving).
+* Evaluation of incremental changes.
 
-**Creating a script file:**
+### **Creating a script file:**
 
 ![](./Ressources/RStudio_Script1.png)
 ![](./Ressources/RStudio_Script2.png)
