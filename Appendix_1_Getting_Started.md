@@ -13,7 +13,8 @@ order: 1
 ![](./Ressources/RGui.png)
 ![](./Ressources/Rapp.png)
 
-<img src="./Ressources/RGui.png" width="200">
+<img src="./Ressources/RGui.png" width="400">
+<img src="./Ressources/Rapp.png" width="400">
 
 **Interesting:** You can also run the code in a UNIX or BASH window by typing the command \texttt{R}.
 
