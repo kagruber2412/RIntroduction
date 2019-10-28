@@ -94,10 +94,35 @@ RStudio offers...
 
 ![](./Ressources/RStudio_Script1.png)
 ![](./Ressources/RStudio_Script2.png)
+
+### Writting a script
+
 ![](./Ressources/RStudio_Script3.png)
+
+### Execute single code line
+
 ![](./Ressources/RStudio_Script4.png)
 ![](./Ressources/RStudio_Script5.png)
+
+### Execute code selection
+
 ![](./Ressources/RStudio_Script6.png)
+![](./Ressources/RStudio_Script7.png)
+
+### Saving a script file
+
+![](./Ressources/RStudio_Script9a.png)
+![](./Ressources/RStudio_Script9b.png)
+![](./Ressources/RStudio_Script9c.png)
+![](./Ressources/RStudio_Script10.png)
+
+### Open an existing script file from the current directory
+
+![](./Ressources/RStudio_Script10b.png)
+
+### Open an existing script file from another directory
+
+![](./Ressources/RStudio_Script11a.png)
 
 
 
