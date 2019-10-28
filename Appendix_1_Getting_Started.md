@@ -61,3 +61,5 @@ RStudio offers...
   * workspace management,
   * debugging, syntax-highlighting, intelligent code completion,
   * easy communication with other softwar and plattforms... (and more)
+  
+![](./Ressources/RStudio_Intro1.png)
