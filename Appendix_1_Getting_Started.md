@@ -82,7 +82,7 @@ RStudio offers...
 
 ## Script (.R)
 
-* The sequence of commands necessary for analysis is typically **written down** (``scripted'') in textfiles prior to execution.
+* The sequence of commands necessary for analysis is typically **written down** (_scripted_) in textfiles prior to execution.
 
 * Advantages: 
 
@@ -90,10 +90,14 @@ RStudio offers...
     * Automation of repetitive tasks (time saving).
     * Evaluation of incremental changes.
 
+**Creating a script file:**
+
 ![](./Ressources/RStudio_Script1.png)
 ![](./Ressources/RStudio_Script2.png)
 ![](./Ressources/RStudio_Script3.png)
-
+![](./Ressources/RStudio_Script4.png)
+![](./Ressources/RStudio_Script5.png)
+![](./Ressources/RStudio_Script6.png)
 
 
 
