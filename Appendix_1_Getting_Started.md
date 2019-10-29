@@ -111,6 +111,8 @@ Advantages:
 
 ### Saving a script file
 
+<img src="./Ressources/RStudio_Script9a.png" width="425" height="300"><img src="./Ressources/RStudio_Script9b.png" width="425" height="300">
+
 ![](./Ressources/RStudio_Script9a.png)
 ![](./Ressources/RStudio_Script9b.png)
 ![](./Ressources/RStudio_Script9c.png)
