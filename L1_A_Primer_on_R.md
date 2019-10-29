@@ -110,7 +110,7 @@ Producing a horizontal boxplot in gray of the monthly numbers of sunspots from R
 boxplot(sunspot.month, col="gray", horizontal = TRUE)
 ```
 
-NOTE! It is easier to remember the name of an argument than its position. If you can not remember the name or the position you can get help by using **`?function.name`** or **`help(function.name)`**.
+**NOTE!** It is easier to remember the name of an argument than its position. If you can not remember the name or the position you can get help by using **`?function.name`** or **`help(function.name)`**.
 
 ## Actions
 
@@ -139,7 +139,7 @@ Print out the result on the console.
 cat("Error: object 'Mean.sunspot' not found")
 ```
 
-NOTE! R is **case sensitive**! Capitalisation does matter. Here, `M` and `m` are different symbols and refer to different objects.
+**NOTE!** R is **case sensitive**! Capitalisation does matter. Here, `M` and `m` are different symbols and refer to different objects.
 
 3. **Subsetting**. Extracting elements from an object. 
 
