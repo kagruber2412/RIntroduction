@@ -10,7 +10,7 @@ order: 1
 * R is a computer **language** (like C or C++).
 * The _R Graphical User Interface_ (RGui for Windows) / _R Application_ (R.app for Mac OS X) is a terminal-like window that communicates with your computer to interpret the commands written in the R-language 
 
-<img src="./Ressources/RGui.png" width="425" height="300"><img src="./Ressources/Rapp.png" width="425" height="300">
+<img src="./Ressources/RGui.png" width="425" height="300"> <img src="./Ressources/Rapp.png" width="425" height="300">
 
 **Interesting:** You can also run the code in a UNIX or BASH window by typing the command **`R`**.
 
@@ -111,11 +111,10 @@ Advantages:
 
 ### Saving a script file
 
-<img src="./Ressources/RStudio_Script9a.png" width="425" height="300"><img src="./Ressources/RStudio_Script9b.png" width="425" height="300">
+<img src="./Ressources/RStudio_Script9a.png" width="425" height="300"> <img src="./Ressources/RStudio_Script9b.png" width="425" height="300">
 
-![](./Ressources/RStudio_Script9a.png)
-![](./Ressources/RStudio_Script9b.png)
-![](./Ressources/RStudio_Script9c.png)
+<img src="./Ressources/RStudio_Script9c.png" width="425" height="300"> 
+
 ![](./Ressources/RStudio_Script10.png)
 
 ### Open an existing script file from the current directory
