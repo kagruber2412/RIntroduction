@@ -45,7 +45,7 @@ order: 1
 2 + 2
 ```
 
-NOTE! If a command is not completed at the end of a line, R will give a continuation prompt **`+`**, by default.
+<p style="color:red"><b>NOTE!</b></p> If a command is not completed at the end of a line, R will give a continuation prompt **`+`**, by default.
 
 ```{r}
 2 + 
