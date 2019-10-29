@@ -113,9 +113,9 @@ Advantages:
 
 <img src="./Ressources/RStudio_Script9a.png" width="425" height="300"> <img src="./Ressources/RStudio_Script9b.png" width="425" height="300">
 
-<center>
+<p align="center">
 <img src="./Ressources/RStudio_Script9c.png" width="350" height="300"> 
-</center>
+</p>
 
 ![](./Ressources/RStudio_Script10.png)
 
