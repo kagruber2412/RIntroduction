@@ -9,19 +9,13 @@ order: 1
 
 R has three basic data types: 
 
-1(a). **Numeric** (``real numbers''). 
-
-The two most common numeric types are `double` (double precision floating point numbers) and `integer` (without floating point).
+1(a). **Numeric** (``real numbers''). The two most common numeric types are `double` (double precision floating point numbers) and `integer` (without floating point).
 
 1(b). **Complex** (``real and imaginary numbers'').
 
-2. **Logical** (``boolean''). 
+2. **Logical** (``boolean''). Reserved words for denoting logical constants are `TRUE` and `FALSE` (and `NA` for missing value). 
 
-Reserved words for denoting logical constants are `TRUE` and `FALSE` (and `NA` for missing value). 
-
-3. **Character**.
-
-Data type for storing letters and symbols (strings, text).
+3. **Character**. Data type for storing letters and symbols (strings, text).
 
 
 # Data structures
@@ -84,7 +78,7 @@ c(dbl,dbl)
 c(dbl, chr)
 ```
 
-NOTE! The automatic change of the data type of the resulting vector is called **coercion**. Coercion ensures the same data type for each element in the vector is maintained.
+**NOTE!** The automatic change of the data type of the resulting vector is called **coercion**. Coercion ensures the same data type for each element in the vector is maintained.
 
 
 ## Vector arithmetic
@@ -111,7 +105,7 @@ v <- c(1.1, 1.2, 1.3, 1.4, 1.5)
 a * v
 ```
 
-NOTE! Arithmetic operations of vectors are performed **elementwise**. If two vectors are of unequal length, the shorter vector will be **recycled** in order to match the longer one (here, the first element in `a` is used again).
+**NOTE!** Arithmetic operations of vectors are performed **elementwise**. If two vectors are of unequal length, the shorter vector will be **recycled** in order to match the longer one (here, the first element in `a` is used again).
 
 # Matrices
 
@@ -135,14 +129,14 @@ A
 
 The arguments _`nrow`_ and _`ncol`_ indicate the number of rows and number of columns the resulting matrix consists of. 
 
-NOTE! For 4 elements and _`ncol`_`= 2` the matrix can only have 2 rows. Thus, there is no need to specify both arguments.
+**NOTE!** For 4 elements and _`ncol`_`= 2` the matrix can only have 2 rows. Thus, there is no need to specify both arguments.
 
 ```{r}
 A <- matrix(a, ncol=2)             # matrix with 2 columns and 2 rows
 A
 ```
 
-NOTE! By default the matrix is filled up column after column (R treats a matrix object internally as a column vector). If the matrix should be filled up row after row the argument _`byrow`_`= TRUE` is required.
+**NOTE!** By default the matrix is filled up column after column (R treats a matrix object internally as a column vector). If the matrix should be filled up row after row the argument _`byrow`_`= TRUE` is required.
 
 ```{r}
 B <- matrix(a, ncol=2, byrow=TRUE) # matrix filled-up rowwise
@@ -181,7 +175,7 @@ D.long
 Error in cbind(D.wide, D.long) : object 'D.wide' not found
 ~~~
 
-NOTE! Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
+**NOTE!** Two matrices of unequal dimensions (number of rows or number of columns) cannot be combined.
 
 ## Matrix arithmetic
 
