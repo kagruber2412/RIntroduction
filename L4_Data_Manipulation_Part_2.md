@@ -181,3 +181,172 @@ revalue(div.fat, c("regular" = "10% fat", "light" = "6% fat"))
 mapvalues(div.fat, from = c("regular", "light"), to = c("10% fat", "6% fat"))
 ```
 
+<br>
+
+# Dates and times in R
+
+(see also R for Data Science, Chapter 13, or https://r4ds.had.co.nz/dates-and-times.html Chapter 2.16)
+
+Often data is collected at regular intervals (e.g. Google Analytics data for customer tracking) and thus, comes with dates and time stamps. R allows you to analyze date and time values from many different perspectives. 
+
+In R the easiest way to convert a character into a date is to use the `as.Date()`-function: 
+
+~~~
+as.Date(x, format, tryFormats = c("%Y-%m-%d", "%Y/%m/%d"), ...)
+~~~
+
+* `x`: an object to be converted.
+
+* `format`: (optional) character string specifying the input format. If not specified `tryFormats` is used.
+
+* `tryFormats`: character vector of format strings to try if format is not specified.
+
+The `as.Date()` function allows a variety of input formats through the `format` argument. The default format is a four digit year, followed by a month, then a day, separated by either dashes or slashes:
+
+```{r}
+as.Date("1915-6-16")
+as.Date("1990/02/17")
+
+as.Date("9/17/19", format = "%m/%d/%y")
+```
+
+If the input dates are not in the standard format, a format string can be composed using the following elements:
+
+| Code | Value |
+|------|-------------------------------|
+| %d | Day of month (decimal number) |
+| %m | Month (decimal number) |
+| %b | Month (abbreviated) |
+| %B | Month (full name) |
+| %y | Year (2 digits) |
+| %Y | Year (4 digits) |
+
+In R dates are stored internally as the number of days or seconds since January 1, 1970 (using negative numbers for earlier dates). Thus, dates in R will generally have a **numeric** data type. 
+
+The `as.numeric()` function can be used to convert a date object to its internal form:
+
+```{r}
+dates <- as.Date(c("1/10/70", "10/1/70", "1/1/00", "9/17/19"), 
+                 format = "%m/%d/%y") # dates in non-standard format
+dates
+```
+
+```{r}
+as.numeric(dates)  # obtain the days passed since January 1, 1970
+```
+
+To extract the date components, the `weekdays()`, `days()`, `months()` or `quarters()`-functions can be used:
+
+```{r}
+weekdays(dates)    # find the day of the week
+```
+~~~
+"Saturday" "Thursday" "Saturday" "Tuesday" 
+~~~
+
+It is also possible to use the `seq()`-function (or alternatively the `seq.Date()`-function) to create a vector of dates. For example, to a sequence of each day of the year 2019 can be obtained as:
+
+```{r}
+year.2019 <- seq(from = as.Date("2019-1-1"), to = as.Date("2019-12-31"), 
+                 by = "day")
+```
+
+```{r}
+year.2019 <- seq.Date(as.Date("2019-1-1"), to = as.Date("2019-12-31"), 
+                      by = "day")
+head(year.2019)
+```
+
+**NOTE!** Dates are internally treated as **numeric** data types. This allows us to perform a variety of calculations:
+
+```{r}
+median(year.2019)
+min(year.2019)
+min(year.2019)
+range(year.2019)
+```
+
+## Arithmetics
+
+**NOTE!** If two dates are subtracted, R will return the results in the form of a **time difference**:
+
+```{r}
+year.2019[11] - year.2019[1]
+```
+
+Other units of time differences can be calculated with the `difftime()`-function:
+
+~~~
+difftime(time1, time2, tz,
+         units = c("auto", "secs", "mins", "hours", "days", "weeks"))
+~~~
+
+* `time1`, `time2`: date-time or date objects.
+
+* `tz`: (optional) time-zone specification (mainly for "POSIXlt" objects).
+
+* `units`: character string specifying the units in which the results are desired (can also be abbreviated).
+
+```{r}
+difftime(year.2019[11], year.2019[1], units="mins")
+difftime(year.2019[11], year.2019[1], units="hours")
+```
+
+**NOTE!** Conceptually, adding and substracting values to dates is a tricky topic. What does it mean to "add one month" to a date? For example (and I think we all agree) one month after 2018-01-01 is 2018-02-01. But what's one month after 2018-01-31?
+
+```{r}
+dates <- seq(as.Date("2019-1-31"), to = as.Date("2019-12-31"), 
+             by = "month")
+dates
+```
+
+Here, R is literally adding 1 to the month component of each date. Obviously, dates like 2018-02-31 and 2018-04-31 don't exist, so R counts the difference between the day component and the last valid date in each month, and then adds that amount to the last valid month to get a valid date. For example, 2018-02-31 is (in a sense) three days after 2018-02-28, so R resolves the date to 2018-03-03.
+
+Here, the `lubridate` package provides functionality for adding months to a date that behaves slightly differently.
+
+```{r}
+# install.packages(lubridate)
+library(lubridate)
+```
+
+```{r}
+dates <- as.Date("2018-01-31") %m+% months(seq(0,12))
+dates
+```
+
+Extracting date components with `lubridate`:
+
+```{r}
+month(dates)  # extract the month
+```
+
+```{r}
+wday(dates, label = TRUE)    # find the day of the week
+```
+~~~
+ [1] Wed Wed Sat Mon Thu Sat Tue Fri Sun Wed Fri Mon Thu
+Levels: Sun < Mon < Tue < Wed < Thu < Fri < Sat
+~~~
+
+<br>
+
+## More arithmetics
+
+**Example:** calculate the time difference between two events. 
+
+```{r}
+start <- c("2019-08-21", "2019-09-01", "2019-08-15", "2019-09-18")
+end <- c("2019-09-16", "2019-09-06", "2019-08-22", "2019-10-11")
+elapsed.time <- start %--% end
+```
+
+The time difference (elapsed time) in seconds is obtained with `as.duration()`:
+```{r}
+as.duration(elapsed.time)
+```
+
+Alternatively, the time differences can be converted to another unit of time such as weeks or days:
+```{r}
+as.duration(elapsed.time) / dweeks(1)
+```
+The function call `dweeks(1)` generates a duration of one week in seconds, which is 604800. Dividing that into duration returns the number of weeks. You can do the same with `dhours(1)` (one hour), `ddays(1)` (one day), `dminutes(1)` (one minute) and `dyears(1)` (one year).
