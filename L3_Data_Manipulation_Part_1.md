@@ -1,5 +1,6 @@
 # The data science process
 
+<img src="./Ressources/DataScienceProcess_Manipulate.png" width="425" height="300" style="margin: 0px 50px">
 
 # Discover
 
