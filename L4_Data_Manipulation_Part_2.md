@@ -47,9 +47,13 @@ factor(x = character(), levels, labels = levels, ordered = is.ordered(x))
 
 **Example:** _Ben\&Jerry ice-cream_ (continued).
 
-| **continuous** | **categorical** |
-|-----------------------------------------------|------------------------------------------------|
-| price paid, coupon value, total spendings, quantity | promotion type, package size, flavor, formula description |
+**Continuous**:
+
+* price paid, coupon value, total spendings, quantity
+
+**Categorical:**
+
+* promotion type, package size, flavor, formula description
 
 ```{r}
 str(BenAndJerry)
