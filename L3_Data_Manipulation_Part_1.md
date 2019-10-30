@@ -40,7 +40,7 @@ nrow(BenAndJerry)
 ncol(BenAndJerry)
 dim(BenAndJerry)
 ```
-<br></br>
+---
 
 **Question 2: What variables are included?**
 
