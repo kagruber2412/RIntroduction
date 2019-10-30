@@ -59,3 +59,66 @@ You can also check the levels of a factor with `levels()`, and the number of lev
 levels(fat.content)
 nlevels(fat.content)
 ```
+
+**NOTE!** A factors levels will always be character values. As a consequency, factors look like character vectors but they are actually integers.
+
+The function `summary()` handles factors differently to characters (and numbers):
+
+```{r}
+summary(BenAndJerry$formula_descr)
+```
+
+```{r}
+summary(fat.content)
+```
+
+The occurrence counts for each value is often more useful information.
+
+
+## Unordered vs. ordered factors
+
+The default order of the factor levels is **alphabetical**. Thus, R will assign 1 to the level `LIGHT HALF THE FAT` and 2 to the level `REGULAR` (because "L" comes before "R", even though the first element in this vector is `REGULAR`).
+
+Sometimes, the order of the factor does not matter, other times you might want to specify the order because it is meaningful or it is required by a particular type of analysis (like changing the reference to consider a certain category as baseline).
+
+```{r}
+levels(fat.content)  # raw data levels
+```
+
+```{r}
+min(fat.content)     # doesn't work
+```
+
+~~~
+Error in Summary.factor(c(2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L, 2L,  : 
+  ‘min’ not meaningful for factors
+~~~
+
+**NOTE!** For unordered factors only the logical operators  `==` and `!=` can be used for comparing levels. Meaning: a factor can only be compared to another factor with an identical set of levels (not necessarily in the same ordering) or to another character vector. Specifying the order of the levels allows us to compare levels:
+
+```{r}
+fat.content <- factor(fat.content, levels = c("LIGHT HALF THE FAT", "REGULAR"), 
+                      ordered = TRUE) # order levels
+min(fat.content)     # works!
+```
+
+Ordered factors are compared in the same way as unordered factors, but the general dispatch mechanism precludes comparing ordered and unordered factors. Thus, on ordered factors the `min()`, `max()`, and `range()` functions can be applied (and for unordered factors R will generate an error).
+
+Another way of changing the order of factor levels is offered by the `relevel()`-function. The `relevel()`-functions sets a specific value as a reference (= the first value in the level list): 
+
+```{r}
+div.fat <- factor(sample(c("regular", "skimmed", "light"), 
+                          size = 10, replace = TRUE))
+```
+
+```{r}
+div.fat <- relevel(div.fat, ref = "skimmed") # Make skimmed first
+div.fat
+```
+
+```{r}
+div.fat <- relevel(div.fat, ref = "regular") # Make regular first
+div.fat
+```
+
+**NOTE!** `relevel()` won't work for ordered factors!
