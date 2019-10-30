@@ -2,7 +2,7 @@
 
 In a dataset, we can distinguish two types of variables:
 
-<img src="./Ressources/Data_Types.png" width="825" height="300" style="margin: 0px 50px">
+<img src="./Ressources/Data_Types.png" width="625" height="300" style="margin: 0px 50px">
 
 **Continuous**:
 
