@@ -1,8 +1,8 @@
 # Data types (revised)
 
-In a dataset, we can distinguish two types of variables: 
+In a dataset, we can distinguish two types of variables:
 
-<img src="./Ressources/Data_Types.png" width="1225" height="300" style="margin: 0px 50px">
+<img src="./Ressources/Data_Types.png" width="825" height="300" style="margin: 0px 50px">
 
 **Continuous**:
 
@@ -11,10 +11,6 @@ In a dataset, we can distinguish two types of variables:
 **Categorical**:
 
 * limited number of integer \& character values
-
-| **continuous** | **categorical** |
-|-----------------------------------------------|------------------------------------------------|
-| unlimited number of double \& integer values | limited number of integer \& character values |
 
 **NOTE!** Character values are not supported in statistical models. The only way to consider them is to convert them to a vector of integers. 
 
