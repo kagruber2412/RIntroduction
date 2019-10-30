@@ -313,6 +313,9 @@ Groups both the average `Unit.price.deal` **and** `Unit.price.non.deal` accordin
 # The tidyverse package
 (see also R for Data Science, Chapter 3, or https://r4ds.had.co.nz/transform.html Chapter 1.5)
 
+<img src="./Ressources/tidyverse.png" width="1225" height="300" style="margin: 0px 50px">
+
+
 * The add-on package **`tidyverse`** packages the data science process together. It is a collection of other R packages for data exploration and manipulation (**`dplyr`**), data resphaping (**`tidyr`**) and data visualization (**`ggplot`**) (for a detailed description see https://www.tidyverse.org).
 
 * All packages make use of the pipe operator `%>%` (from the **`magritrr`** package) to string multiple data processing tasks together.
