@@ -25,7 +25,7 @@ In a dataset, we can distinguish two types of variables:
 **Factors** store character values as integers. The character values are treated as labels associated with a set of unique integer values. This ensures that the statistical function used will treat such data correctly.
 
 <p align="center">
-<img src="./Ressources/Data_Types.png" width="625" height="300" style="margin: 0px 50px">
+<img src="./Ressources/Factors.png" width="625" height="300" style="margin: 0px 50px">
 </p>
 
 
