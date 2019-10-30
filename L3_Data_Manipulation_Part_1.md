@@ -199,7 +199,7 @@ Data preparation covers all activities used to construct the final dataset from 
 
 <br>
 
-Calculate the `price_paid_deal` and `price_paid_non_deal` \underline{per unit}. Create two new data objects `Unit.price.deal` and `Unit.price.non.deal`:
+Calculate the `price_paid_deal` and `price_paid_non_deal` per unit. Create two new data objects `Unit.price.deal` and `Unit.price.non.deal`:
 
 ```{r}
 Unit.price.deal <- BenAndJerry$price_paid_deal/BenAndJerry$quantity
@@ -296,9 +296,6 @@ Groups the mean of `Unit.price.deal` according to package size crossed with amou
 aggregate(Unit.price.deal ~ size1_descr + formula_descr, 
           FUN = mean, subset = total_spent > 0 , data=BenAndJerry)
 ```
-```{r}
-head(aggregate(Unit.price.deal ~ size1_descr + formula_descr, FUN=mean, subset = total_spent > 0 , data=BenAndJerry), n=6)
-```
 
 Only observations with purchases larger than 0 are considered (i.e. purchases smaller than or equal to 0 are excluded).
 
@@ -307,11 +304,8 @@ Only observations with purchases larger than 0 are considered (i.e. purchases sm
 aggregate(cbind(Unit.price.deal,Unit.price.non.deal) ~ size1_descr + formula_descr,
           FUN = mean, subset = total_spent > 0 , data = BenAndJerry)
 ```
-```{r}
-head(aggregate(cbind(Unit.price.deal,Unit.price.non.deal) ~ size1_descr + formula_descr, FUN=mean, subset= total_spent > 0 , data=BenAndJerry), n=6)
-```
 
-Groups both the average `Unit.price.deal` \underline{and} `Unit.price.non.deal` according package size and fat.
+Groups both the average `Unit.price.deal` **and** `Unit.price.non.deal` according package size and fat.
 
 <br>
 
