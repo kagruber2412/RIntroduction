@@ -266,6 +266,8 @@ min(year.2019)
 range(year.2019)
 ```
 
+<br>
+
 ## Arithmetics
 
 **NOTE!** If two dates are subtracted, R will return the results in the form of a **time difference**:
