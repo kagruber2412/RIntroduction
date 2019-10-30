@@ -9,6 +9,8 @@ In a dataset, we can distinguish two types of variables:
 
 **NOTE!** Character values are not supported in statistical models. The only way to consider them is to convert them to a vector of integers. 
 
+<br>
+
 # Factors in R
 
 (see also R for Data Science, Chapter 12, or https://r4ds.had.co.nz/factors.html Chapter 2.15)
@@ -62,6 +64,8 @@ nlevels(fat.content)
 
 **NOTE!** A factors levels will always be character values. As a consequency, factors look like character vectors but they are actually integers.
 
+<br>
+
 The function `summary()` handles factors differently to characters (and numbers):
 
 ```{r}
@@ -74,6 +78,7 @@ summary(fat.content)
 
 The occurrence counts for each value is often more useful information.
 
+<br>
 
 ## Unordered vs. ordered factors
 
@@ -122,3 +127,57 @@ div.fat
 ```
 
 **NOTE!** `relevel()` won't work for ordered factors!
+
+<br>
+
+## Renaming factor levels
+
+Rename _all_ levels by using **replacement operations**: 
+
+```{r}
+div.fat <- factor(sample(c("regular", "skimmed", "light"), 
+                         size = 10, replace = TRUE), 
+                  levels=c("regular","light","skimmed"), ordered=TRUE)
+```
+```{r}
+levels(div.fat) <- c("10% fat", "6% fat", "0% fat")
+div.fat
+```
+
+**NOTE!** This method will modify `div.fat` directly! Thus, you don’t have to save the result back into `div.fat`.
+
+You can also rename _single_ levels by indexing:
+
+```{r}
+levels(div.fat)[levels(div.fat) == "light"] <- "6% fat"
+levels(div.fat)
+```
+
+**NOTE!** Specific elements in a vector can be accessed by `[]`. The principle is similar to using the `subset()`-function but using square brackets allows you to assign values to a specific element which is not possible with `subset()`. 
+
+In addition, using square brackets allows you to access specific elements in a vector by position:
+
+```{r, eval=FALSE}
+levels(div.fat)[1] <- "6% fat"  # access first level by position
+levels(div.fat)[2] <- "10% fat" # access second level by position
+```
+
+In general, you can do the same in a more convenient way with the `revalue()` or `mapvalues()`-functions from the `plyr` package.
+
+```{r}
+# install.packages("plyr")
+library(plyr)
+```
+
+```{r}
+div.fat <- factor(sample(c("regular", "skimmed", "light"), size = 10, replace = TRUE), 
+                  levels=c("regular","light","skimmed"), ordered=TRUE)
+```
+
+Rename _several_ levels with **`revalue()`** and **`mapvalues()`**:
+
+```{r}
+revalue(div.fat, c("regular" = "10% fat", "light" = "6% fat"))
+mapvalues(div.fat, from = c("regular", "light"), to = c("10% fat", "6% fat"))
+```
+
