@@ -47,6 +47,10 @@ factor(x = character(), levels, labels = levels, ordered = is.ordered(x))
 
 **Example:** _Ben\&Jerry ice-cream_ (continued).
 
+```{r}
+str(BenAndJerry)
+```
+
 **Continuous**:
 
 * price paid, coupon value, total spendings, quantity
@@ -54,10 +58,6 @@ factor(x = character(), levels, labels = levels, ordered = is.ordered(x))
 **Categorical:**
 
 * promotion type, package size, flavor, formula description
-
-```{r}
-str(BenAndJerry)
-```
 
 **NOTE!** In the dataset `size1_descr`, `flavor_descr` and `formula_descr` are character values. We have to convert them into **factors** to properly work with them!
 
