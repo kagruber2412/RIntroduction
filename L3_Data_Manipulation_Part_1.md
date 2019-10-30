@@ -29,7 +29,7 @@ Question 4: How are values distributed over variables?
 
 **Example:** _Ben\&Jerry ice-cream_. Subsample of the _Nielson homescan data_,a consumer panel consisting of 70,000 households and all of their purchases. 
 
-<br></br>
+<br>
 
 **Question 1: What is the size of the data set?**
 
@@ -40,7 +40,8 @@ nrow(BenAndJerry)
 ncol(BenAndJerry)
 dim(BenAndJerry)
 ```
----
+
+<br>
 
 **Question 2: What variables are included?**
 
