@@ -23,6 +23,8 @@ order: 1
 
 > With over 16.000 extensions the statistical and computational toolkit is huge making the R programming language the lingua franca of data science.
 
+<br>
+
 # Why R?
 
 * Very intuitive syntax.
@@ -31,6 +33,8 @@ order: 1
 * Offers functionality for a large number of statistical procedures.
 * Easy to extend (also to other software environments and plattforms). 
 * **It's free**.
+
+<br>
 
 # The R language design
 
@@ -53,6 +57,8 @@ order: 1
 ```
 
 Solution: Finish the command or hit **`Esc`**.
+
+<br>
 
 ## Functions
 
@@ -111,6 +117,8 @@ boxplot(sunspot.month, col="gray", horizontal = TRUE)
 ```
 
 **NOTE!** It is easier to remember the name of an argument than its position. If you can not remember the name or the position you can get help by using **`?function.name`** or **`help(function.name)`**.
+
+<br>
 
 ## Actions
 
