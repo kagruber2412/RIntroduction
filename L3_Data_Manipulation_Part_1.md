@@ -27,8 +27,6 @@ Question 3: Are there implausible/ missing values?
 
 Question 4: How are values distributed over variables? 
 
-<br></br>
-
 **Example:** _Ben\&Jerry ice-cream_. Subsample of the _Nielson homescan data_,a consumer panel consisting of 70,000 households and all of their purchases. 
 
 <br></br>
@@ -42,6 +40,7 @@ nrow(BenAndJerry)
 ncol(BenAndJerry)
 dim(BenAndJerry)
 ```
+<br></br>
 
 **Question 2: What variables are included?**
 
@@ -71,9 +70,9 @@ str(BenAndJerry)
 
 Here: one line for each column in the data set (including its name, data type and the first few observations) is displayed. 
 
-**NOTE!** The `str()`-function gives a reasonable output for any R object by compactly displaying its content. It is particularly well-suited for **list** objects. Recap: a list is a generic vector containing other objects. 
+**NOTE!** The `str()`-function gives a reasonable output for any R object by compactly displaying its content. It is particularly well-suited for **list** objects (Recap: a list is a generic vector containing other objects). 
 
-**NOTE!** Technically, R considers a **data frame** internally as a list object. Thus, a data frame is a **list of equal-length vectors**. Therefore, the `length()` of a data frame is the length of the underlying list and gives the same result as `ncol()`; whereas `nrow()` gives the number of rows.
+Technically, R considers a **data frame** internally as a list object. Thus, a data frame is a **list of equal-length vectors**. Therefore, the `length()` of a data frame is the length of the underlying list and gives the same result as `ncol()`; whereas `nrow()` gives the number of rows.
 
 ```{r}
 length(BenAndJerry)
@@ -87,11 +86,13 @@ ncol(BenAndJerry)
 nrow(BenAndJerry)
 ```
 
-**Hint:** Use \$ to extract columns by their name!
+**Hint:** Use `$` to extract columns by their name!
 
 ```{r}
 head(BenAndJerry$price_paid_deal)
 ```
+
+<br></br>
 
 **Question 3: Are there implausible/ missing values?**
 
@@ -114,7 +115,6 @@ sum(BenAndJerry$total_spent <= 0)
 ```
 
 There are no observations with 0 or negative purchases.
-
 
 
 More logical operators
@@ -148,6 +148,7 @@ sum(is.na(BenAndJerry$total_spent))
 
 There are no missing values for purchases.
 
+<br></br>
 
 **Question 4: How are values distributed over variables?**
 
@@ -178,8 +179,9 @@ More statistic functions
 summary(BenAndJerry)
 ```
 
+<br></br>
 
-# Stage 2: Prepare
+## Stage 2: Prepare
 
 Data preparation covers all activities used to construct the final dataset from the initial raw data
 
@@ -232,7 +234,7 @@ aggregate(formula, data, FUN, subset, na.action = na.omit, ...)
 
 **NOTE!** In R, formulas are used to express a relationship between variables. Most commonly, the relationship between one **response** and one (or several) **predictor** variable(s) is described. 
 
-* The formula is characterized by the tilde `~` symbol. The **response** variable stands on the **left** hand side and the **predictor** variable on the **right** hand side of the tilde: 
+The formula is characterized by the tilde `~` symbol. The **response** variable stands on the **left** hand side and the **predictor** variable on the **right** hand side of the tilde: 
 
 > \texttt{response} \~ \texttt{predictor}
 
