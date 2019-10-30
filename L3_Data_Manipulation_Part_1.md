@@ -7,6 +7,7 @@
 
 * Scanning your data also helps you to discover first insights into it and provides guidance on applying the right kind of further statistical treatment to it.
 
+<br>
 
 # Prepare and Analyse
 
@@ -14,18 +15,19 @@
 
 * Data preparation tasks are likely to be performed multiple times during interactive data analysis and model building stages (also called **data wrangling** or **data munging**). That's why data prepartion typically consumes around 80% of overall time of an analytics project.
 
+<br>
 
 ## Stage 1: Discover
 
 Data inspection constitutes a set of simple tools to answer questions like:
 
-Question 1: What is the size the data set? 
+> Question 1: What is the size the data set? 
 
-Question 2: What variables are included? 
+> Question 2: What variables are included? 
 
-Question 3: Are there implausible/ missing values?
+> Question 3: Are there implausible/ missing values?
 
-Question 4: How are values distributed over variables? 
+> Question 4: How are values distributed over variables? 
 
 **Example:** _Ben\&Jerry ice-cream_. Subsample of the _Nielson homescan data_,a consumer panel consisting of 70,000 households and all of their purchases. 
 
@@ -71,6 +73,8 @@ str(BenAndJerry)
 
 Here: one line for each column in the data set (including its name, data type and the first few observations) is displayed. 
 
+<br>
+
 **NOTE!** The `str()`-function gives a reasonable output for any R object by compactly displaying its content. It is particularly well-suited for **list** objects (Recap: a list is a generic vector containing other objects). 
 
 Technically, R considers a **data frame** internally as a list object. Thus, a data frame is a **list of equal-length vectors**. Therefore, the `length()` of a data frame is the length of the underlying list and gives the same result as `ncol()`; whereas `nrow()` gives the number of rows.
@@ -93,7 +97,7 @@ nrow(BenAndJerry)
 head(BenAndJerry$price_paid_deal)
 ```
 
-<br></br>
+<br>
 
 **Question 3: Are there implausible/ missing values?**
 
@@ -117,6 +121,7 @@ sum(BenAndJerry$total_spent <= 0)
 
 There are no observations with 0 or negative purchases.
 
+<br>
 
 More logical operators
 
@@ -149,7 +154,7 @@ sum(is.na(BenAndJerry$total_spent))
 
 There are no missing values for purchases.
 
-<br></br>
+<br>
 
 **Question 4: How are values distributed over variables?**
 
@@ -165,6 +170,7 @@ var(BenAndJerry$price_paid_deal)
 sqrt(var(BenAndJerry$price_paid_deal))
 sd(BenAndJerry$price_paid_deal)
 ```
+<br> 
 
 More statistic functions
 
@@ -180,7 +186,7 @@ More statistic functions
 summary(BenAndJerry)
 ```
 
-<br></br>
+<br>
 
 ## Stage 2: Prepare
 
@@ -191,6 +197,8 @@ Data preparation covers all activities used to construct the final dataset from 
 * Constructing new data sets (aggregate over observations, reshape the data set)
 
 **Example:** _Ben\&Jerry ice-cream_ (continued).
+
+<br>
 
 Calculate the `price_paid_deal` and `price_paid_non_deal` \underline{per unit}. Create two new data objects `Unit.price.deal` and `Unit.price.non.deal`:
 
@@ -232,36 +240,38 @@ aggregate(formula, data, FUN, subset, na.action = na.omit, ...)
 
 * `na.action`: what should happen with observations containing `NA` (missing) values? (ignored by default)
 
+<br>
 
 **NOTE!** In R, formulas are used to express a relationship between variables. Most commonly, the relationship between one **response** and one (or several) **predictor** variable(s) is described. 
 
 The formula is characterized by the tilde `~` symbol. The **response** variable stands on the **left** hand side and the **predictor** variable on the **right** hand side of the tilde: 
 
-> \texttt{response} \~ \texttt{predictor}
+`response ~ predictor`
 
 * Predictor variables can be added with the plus `+` symbol:
 
-> \texttt{response} \~ \texttt{predictor1} + \texttt{predictor2}
+`response ~ predictor1 + predictor2`
 
-\bigskip
 
 More formulas
 
 * leave out predictor2:
 
-> \texttt{response} \~ \texttt{predictor1} - \texttt{predictor2}
+`response ~ predictor1 - predictor2`
 
 * tensor product (interactions) of predictor1 and predictor2:
 
-> \texttt{response} \~ \texttt{predictor1} : \texttt{predictor2}
+`response ~ predictor1 : predictor2`
 
 * crossing:
 
-> \texttt{response} \~ \texttt{predictor1} * \texttt{predictor2}
+`response ~ predictor1 * predictor2`
 
-> same as
+ same as
 
-> \texttt{response} \~ \texttt{predictor1} + \texttt{predictor2} + \texttt{predictor1} : \texttt{predictor2}
+`response ~ predictor1 + predictor2 + predictor1 : predictor2`
+
+<br>
 
 In the following, we consider `Unit.price.deal` as the response variable and `size1_descr` as the predictor variable for specifying the formula argument in the **`aggregate()`**-function:
 
@@ -281,7 +291,7 @@ aggregate(Unit.price.deal ~ size1_descr * formula_descr,
           FUN = mean, data = BenAndJerry)
 ```
 
-Groups the mean of `Unit.price.deal` according to package size crossed with amount of fat (\underline{factorial design}).
+Groups the mean of `Unit.price.deal` according to package size crossed with amount of fat (_factorial design_).
 
 ```{r}
 aggregate(Unit.price.deal ~ size1_descr + formula_descr, 
@@ -304,9 +314,10 @@ head(aggregate(cbind(Unit.price.deal,Unit.price.non.deal) ~ size1_descr + formul
 
 Groups both the average `Unit.price.deal` \underline{and} `Unit.price.non.deal` according package size and fat.
 
+<br>
 
 # The tidyverse package
-### R for Data Science, Chapter 3, or https://r4ds.had.co.nz/transform.html Chapter 1.5
+(see also R for Data Science, Chapter 3, or https://r4ds.had.co.nz/transform.html Chapter 1.5)
 
 * The add-on package **`tidyverse`** packages the data science process together. It is a collection of other R packages for data exploration and manipulation (**`dplyr`**), data resphaping (**`tidyr`**) and data visualization (**`ggplot`**) (for a detailed description see https://www.tidyverse.org).
 
