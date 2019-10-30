@@ -305,7 +305,7 @@ Here, R is literally adding 1 to the month component of each date. Obviously, da
 Here, the `lubridate` package provides functionality for adding months to a date that behaves slightly differently.
 
 ```{r}
-# install.packages(lubridate)
+install.packages(lubridate)
 library(lubridate)
 ```
 
@@ -323,10 +323,6 @@ month(dates)  # extract the month
 ```{r}
 wday(dates, label = TRUE)    # find the day of the week
 ```
-~~~
- [1] Wed Wed Sat Mon Thu Sat Tue Fri Sun Wed Fri Mon Thu
-Levels: Sun < Mon < Tue < Wed < Thu < Fri < Sat
-~~~
 
 <br>
 
