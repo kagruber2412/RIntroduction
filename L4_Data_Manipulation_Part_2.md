@@ -2,7 +2,9 @@
 
 In a dataset, we can distinguish two types of variables:
 
+<p align="center">
 <img src="./Ressources/Data_Types.png" width="625" height="300" style="margin: 0px 50px">
+</p>
 
 **Continuous**:
 
@@ -21,6 +23,11 @@ In a dataset, we can distinguish two types of variables:
 (see also R for Data Science, Chapter 12, or https://r4ds.had.co.nz/factors.html Chapter 2.15)
 
 **Factors** store character values as integers. The character values are treated as labels associated with a set of unique integer values. This ensures that the statistical function used will treat such data correctly.
+
+<p align="center">
+<img src="./Ressources/Data_Types.png" width="625" height="300" style="margin: 0px 50px">
+</p>
+
 
 In R the `factor()`-function is used to create and modify factors: 
 
