@@ -31,7 +31,7 @@ factor(x = character(), levels, labels = levels, ordered = is.ordered(x))
 
 <br> 
 
-**Example:** \underline{Ben\&Jerry ice-cream}.
+**Example:** _Ben\&Jerry ice-cream_ (continued).
 
 | **continuous** | **categorical** |
 |-----------------------------------------------|------------------------------------------------|
