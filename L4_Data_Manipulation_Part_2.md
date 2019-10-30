@@ -2,6 +2,15 @@
 
 In a dataset, we can distinguish two types of variables: 
 
+<img src="./Ressources/Data_Types.png" width="1225" height="300" style="margin: 0px 50px">
+
+**Continuous**:
+
+* unlimited number of double \& integer values
+
+**Categorical**:
+
+* limited number of integer \& character values
 
 | **continuous** | **categorical** |
 |-----------------------------------------------|------------------------------------------------|
