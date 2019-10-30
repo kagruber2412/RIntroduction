@@ -27,8 +27,11 @@ Question 3: Are there implausible/ missing values?
 
 Question 4: How are values distributed over variables? 
 
+<br></br>
+
 **Example:** _Ben\&Jerry ice-cream_. Subsample of the _Nielson homescan data_,a consumer panel consisting of 70,000 households and all of their purchases. 
 
+<br></br>
 
 **Question 1: What is the size of the data set?**
 
