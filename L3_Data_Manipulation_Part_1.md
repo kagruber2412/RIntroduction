@@ -170,7 +170,6 @@ var(BenAndJerry$price_paid_deal)
 sqrt(var(BenAndJerry$price_paid_deal))
 sd(BenAndJerry$price_paid_deal)
 ```
-<br> 
 
 More statistic functions
 
@@ -323,7 +322,7 @@ Groups both the average `Unit.price.deal` \underline{and} `Unit.price.non.deal` 
 
 * All packages make use of the pipe operator `%>%` (from the **`magritrr`** package) to string multiple data processing tasks together.
 
-**NOTE!** After installing the **`tidyverse`** package you need to make it available in your current worksession. You can do both either via the \underline{packages tab} in the lower-right panel of RStudio or via the command lines:
+**NOTE!** After installing the **`tidyverse`** package you need to make it available in your current worksession. You can do both either via the _packages tab_ in the lower-right panel of RStudio or via the command lines:
 
 ```{r}
 install.packages("tidyverse")  # download package from CRAN
@@ -353,6 +352,8 @@ BenAndJerry$total_spent %>%      # forward spendings into is.na()
   is.na() %>%                    # forward the result of is.na() into sum()
      sum()              
 ```
+
+<br>
 
 The **`dplyr`** package provides a set of functions that help solve the most common data manipulation challenges:
 
