@@ -17,6 +17,7 @@ R has three basic data types:
 
 3. **Character**. Data type for storing letters and symbols (strings, text).
 
+<br>
 
 # Data structures
 
@@ -30,6 +31,7 @@ R has three basic data types:
 
 5. **List**. Generic vector containing other objects. No restriction on data types or length of the single components.
 
+<br>
 
 # Vectors
 
@@ -80,7 +82,6 @@ c(dbl, chr)
 
 **NOTE!** The automatic change of the data type of the resulting vector is called **coercion**. Coercion ensures the same data type for each element in the vector is maintained.
 
-
 ## Vector arithmetic
 
 Define two new numeric vectors `a` and `b` each having 4 elements:
@@ -106,6 +107,8 @@ a * v
 ```
 
 **NOTE!** Arithmetic operations of vectors are performed **elementwise**. If two vectors are of unequal length, the shorter vector will be **recycled** in order to match the longer one (here, the first element in `a` is used again).
+
+<br>
 
 # Matrices
 
@@ -217,6 +220,8 @@ solve(B)
 eigen(B)
 ```
 
+<br>
+
 # Data frames
 
 ```{r}
@@ -242,6 +247,8 @@ Checking the dimension `[nrow, ncol]`:
 ```{r}
 dim(df)        
 ```
+
+<br>
 
 ## Lists
 
