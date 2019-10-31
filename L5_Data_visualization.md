@@ -16,6 +16,8 @@ Data visualisation is an important tool for generating and communicating insight
 
 * Require changing graph titles, axis, labels, colors, symbols, adding legends, ... or adding information.
 
+<br>
+
 R includes at least three graphical systems: 
 
 1. The **standard graphics** package, 
