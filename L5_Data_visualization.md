@@ -1,8 +1,6 @@
 # The data science process
 
-Data visualisation is an important tool for generating and communicating insights.
-
-<br>
+<img src="./Ressources/DataScienceProcess_Graphs.png" width="1225" height="300" style="margin: 0px 50px">
 
 **Exploratory graphs**: 
 
