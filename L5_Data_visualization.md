@@ -63,6 +63,7 @@ plot(tripduration ~ temperature, data = Chicago.agg)
 
 ## How to select among different graph types?
 
+![](./Ressources/Plot_Types.png)
 
 # Illustrative graphs
 
@@ -114,6 +115,8 @@ plot(customers ~ temperature, main = "Chicago bike trips",
 
 The plotting symbols are controlled by the `pch` (**plotting character**) argument. R provides a fixed set of 26 symbols:
 
+![](./Ressources/Plotting_Characters.png)
+
 Some of the predefined plotting symbols (pch between 21 and 25) allow a fill color separate from the border color. In these cases, the fill color can be controlled with the `bg` setting.
 
 
@@ -121,6 +124,7 @@ Some of the predefined plotting symbols (pch between 21 and 25) allow a fill col
 
 In base R every page is split up into three main regions: (1) the **outer margins**, (2) the current **figure region**, and (3) the current **plot region**:
 
+![](./Ressources/Plotting_Regions.png)
 
 The `plot()`-function draws plotting symbols and lines within the plot region and axes and labels in the figure margins or outer margins. The size of these regions can be controlled via the `par()`-function and the graphics state settings `oma` (or `omi` in inches) for the size of the **outer margins** and `mar` (or `mai` in inches) for the size of the **figure margins**. 
 
@@ -164,6 +168,8 @@ par(old.par)  # switch back to default settings
 * Change the **number of figures** in the plot region:
 
 The number of figures in the plot region can be controlled via the `mfrow` and `mfcol` graphics state settings. Both of these consist of two values indicating a number of rows, _nr_, and a number of columns, _nc_; these settings result in _nr x nc_ figure regions of equal size:
+
+![](./Ressources/Plotting_Regions2.png)
 
 The top-left figure region is used first. If the setting is made via `mfrow` then the figure regions along the top row are used next from left to right, until that row is full. After that, figure regions are used in the next row down, from left to right, and so on. When all rows are full, a new page is started.
 
@@ -212,6 +218,8 @@ colors()
 [13] "azure"         "azure1"        "azure2"        "azure3"       
 [17] "azure4"        "beige"         "bisque"        "bisque1"      ...
 ~~~
+
+![](./Ressources/colors.png)
 
 **RGB colors**: it is also possible to specify colors using one of the standard color-space descriptions. The `rgb()`-function allows a color to be specified as a **Red-Green-Blue** (RGB) triplet of intensities. In RGB the color `"red"` is specified as `rgb(1, 0, 0)` (i.e., as much red as possible, no blue, and no green). To see the RGB values for a particular color name use the the `col2rgb()`-function:
 
