@@ -2,6 +2,8 @@
 
 <img src="./Ressources/DataScienceProcess_Graphs.png" width="1225" height="300" style="margin: 0px 50px">
 
+Data visualisation is an important tool for generating and communicating insights.
+
 **Exploratory graphs**: 
 
 * Describing data, detecting patterns and trends.
