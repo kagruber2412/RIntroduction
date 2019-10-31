@@ -18,9 +18,9 @@ Data visualisation is an important tool for generating and communicating insight
 
 R includes at least three graphical systems: 
 
-1. the **standard graphics** package, 
-2. the **lattice** package for Trellis graphs and 
-3. the **ggplot2** package based on the idea of the grammar-of-graphics.
+1. The **standard graphics** package, 
+2. The **lattice** package for Trellis graphs and 
+3. The **ggplot2** package based on the idea of the grammar-of-graphics.
 
 <br>
 
