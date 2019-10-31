@@ -1,10 +1,8 @@
 # Option 1: Base R
 
-Step 1: Click on the **import** dataset button in the top-right section under the **environment tab**. Choose **From Text (base R)** and select the file you want to import. Next, the import dataset dialog will appear as in the example shown below:
+_Step 1:_ Click on the **import** dataset button in the top-right section under the **environment tab**. Choose **From Text (base R)** and select the file you want to import. Next, the import dataset dialog will appear as in the example shown below:
 
-
-Step 2: Set up the preferences of separator, name and other parameters, click on the **import** button. The dataset will be imported in R Studio and assigned to the variable name as set before.
-
+_Step 2:_ Set up the preferences of separator, name and other parameters, click on the **import** button. The dataset will be imported in R Studio and assigned to the variable name as set before.
 
 **Headings**:
 
@@ -25,6 +23,6 @@ the sample unit).
 * The Decimal field allows you to specify the character for the decimal mark. 
 
 
-# Option 2: readr
+# Option 2: The `readr` package
 
 
