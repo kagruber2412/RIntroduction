@@ -175,7 +175,9 @@ par(old.par)  # switch back to default settings
 
 The number of figures in the plot region can be controlled via the `mfrow` and `mfcol` graphics state settings. Both of these consist of two values indicating a number of rows, _nr_, and a number of columns, _nc_; these settings result in _nr x nc_ figure regions of equal size:
 
+<p align="center">
 <img src="./Ressources/Plotting_Regions2.png" width="400" height="400" style="margin: 0px 50px">
+</p>
 
 The top-left figure region is used first. If the setting is made via `mfrow` then the figure regions along the top row are used next from left to right, until that row is full. After that, figure regions are used in the next row down, from left to right, and so on. When all rows are full, a new page is started.
 
@@ -226,7 +228,7 @@ colors()
 ~~~
 
 <p align="center">
-<img src="./Ressources/colors.png" width="400" height="400" style="margin: 0px 50px">
+<img src="./Ressources/colors.png" width="500" height="500" style="margin: 0px 50px">
 </p>
 
 **RGB colors**: it is also possible to specify colors using one of the standard color-space descriptions. The `rgb()`-function allows a color to be specified as a **Red-Green-Blue** (RGB) triplet of intensities. In RGB the color `"red"` is specified as `rgb(1, 0, 0)` (i.e., as much red as possible, no blue, and no green). To see the RGB values for a particular color name use the the `col2rgb()`-function:
