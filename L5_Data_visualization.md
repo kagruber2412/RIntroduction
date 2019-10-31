@@ -375,18 +375,19 @@ colorRampPalette(c("#FFD700", "gray30"))(10) # use ESE yellow
 
 The functions `points()` and `lines()` add graphical output to the plot region. The `lines()`-function draws lines between (x, y) locations (`NA` values in the (x, y) locations will create breaks in the line), and the `points()`-function draws plotting symbols at (x, y) locations.
 
-To differentiate the data points commonly the **line types** (\underline{\texttt{lty}}) and **line width** (\underline{\texttt{lwd}}) or the **plotting characters** (\underline{\texttt{pch}}) are changed. 
+To differentiate the data points commonly the **line types** (`lty`) and **line width** (`lwd`) or the **plotting characters** (`pch`) are changed. 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r}
 rgb2hex <- function(r,g,b) rgb(r, g, b, maxColorValue = 255)
 rgb2hex(255, 215, 0 )
 ```
 
-```{r, fig.align='center'}
+```{r}
 # plot the number of customers over the 31 weeks
 plot(no.customers/10000 ~ week, ylim = c(0, 40), 
      col = "#FFD700", pch = 19, cex = 2, 
      data = customers)
+     
 # add temperature line (curve)
 lines(temperature ~ week, lty="dashed", lwd = 2, 
       data = temp)
@@ -396,18 +397,19 @@ lines(temperature ~ week, lty="dashed", lwd = 2,
 
 A legend or key can be added to a plot with the `legend()`-function. The legend is usually drawn within the plot region. The function has many arguments, which allow for flexibility in the specification of the contents and layout of the legend.
 
-```{r, fig.align='center'}
+```{r}
 plot(no.customers/10000 ~ week, ylim = c(0, 40), ylab = "",
      col = "#FFD700", pch = 19, cex = 2, 
      data = customers)
+     
 lines(temperature ~ week, lty="dashed", lwd = 2, 
       data = temp)
+      
 legend("topleft", c("no. of customers", "temperature"), 
        cex=1.25, fill=c("#FFD700", "black"), bty = "n")
 ```
 
-\colorbox{red!85}{\textcolor{white}{\textbf{\LARGE{!}}}} It is entirely the responsibility of the user to ensure that the legend corresponds to the plot. There is no automatic checking that data symbols in the legend match those in the plot, or that the labels in the legend have any correspondence with the data.
+**NOTE!** It is entirely the responsibility of the user to ensure that the legend corresponds to the plot. There is no automatic checking that data symbols in the legend match those in the plot, or that the labels in the legend have any correspondence with the data.
 
-\pagebreak
 
 # `ggplot` and the grammer of graphics
