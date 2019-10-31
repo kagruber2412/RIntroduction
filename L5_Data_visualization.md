@@ -115,7 +115,7 @@ plot(customers ~ temperature, main = "Chicago bike trips",
 
 The plotting symbols are controlled by the `pch` (**plotting character**) argument. R provides a fixed set of 26 symbols:
 
-![](./Ressources/Plotting_Characters.png)
+<img src="./Ressources/Plotting_Characters.png" width="400" height="400" style="margin: 0px 50px">
 
 Some of the predefined plotting symbols (pch between 21 and 25) allow a fill color separate from the border color. In these cases, the fill color can be controlled with the `bg` setting.
 
@@ -169,7 +169,7 @@ par(old.par)  # switch back to default settings
 
 The number of figures in the plot region can be controlled via the `mfrow` and `mfcol` graphics state settings. Both of these consist of two values indicating a number of rows, _nr_, and a number of columns, _nc_; these settings result in _nr x nc_ figure regions of equal size:
 
-![](./Ressources/Plotting_Regions2.png)
+<img src="./Ressources/Plotting_Regions2.png" width="400" height="400" style="margin: 0px 50px">
 
 The top-left figure region is used first. If the setting is made via `mfrow` then the figure regions along the top row are used next from left to right, until that row is full. After that, figure regions are used in the next row down, from left to right, and so on. When all rows are full, a new page is started.
 
@@ -219,7 +219,7 @@ colors()
 [17] "azure4"        "beige"         "bisque"        "bisque1"      ...
 ~~~
 
-![](./Ressources/colors.png)
+<img src="./Ressources/colors.png" width="400" height="400" style="margin: 0px 50px">
 
 **RGB colors**: it is also possible to specify colors using one of the standard color-space descriptions. The `rgb()`-function allows a color to be specified as a **Red-Green-Blue** (RGB) triplet of intensities. In RGB the color `"red"` is specified as `rgb(1, 0, 0)` (i.e., as much red as possible, no blue, and no green). To see the RGB values for a particular color name use the the `col2rgb()`-function:
 
