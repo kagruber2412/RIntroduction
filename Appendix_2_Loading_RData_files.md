@@ -16,9 +16,3 @@
 
 ![](./Ressources/Workspace3.png)
 ![](./Ressources/Workspace4.png)
-
-
-# Getting .RData files into RStudio cloud
-
-![](./Ressources/RStudio_Cloud.png)
-![](./Ressources/RStudio_Cloud2.png)
