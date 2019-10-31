@@ -413,3 +413,107 @@ legend("topleft", c("no. of customers", "temperature"),
 
 
 # `ggplot` and the grammer of graphics
+
+(R for Data Science, Chapter 1 \& 22, or https://r4ds.had.co.nz/data-visualisation.html \& https://r4ds.had.co.nz/graphics-for-communication.html Chapter 1.3 \& 5.28)
+
+
+If you want to do anything beyond very simple graphs, it is recommended to switch to the add-on package `ggplot2`.
+
+`ggplot2` is based on the idea that a graph can be constructed by semantic components. This allows to build graphical features up in a series of layers:
+
+ 1. **aesthetic** mapping of the data (`aes()`), defines how variables are connected to visual properties or outputs (e.g. color, size, shape)
+ 
+ 2. **geometric** objects representing the data:
+ 
+| Geometric        | Mapping     |
+|------------------|-------------|
+| geom_histogram() | Histogramm  |
+| geom_density()   | Densityplot |
+| geom_bar()       | Barplot     |
+| geom_point()     | Points      |
+| geom_lines()     | Lines       |
+| geom_boxplot()   | Boxplot     |
+
+ 3. **coordinate systems**.
+ 4. **faceting** the data; splitting by some predefined criteria to display sup-graphs.
+ 5. **themes** to control non-data elements.
+
+| Themes           | Description                                        |
+|------------------|----------------------------------------------------|
+| theme_bw()       | white background with grid lines                   |
+| theme_grey()     | grey background and white grid lines (default)     |
+| theme_classic()  | white background and no grid lines                 |
+| theme_minimal()  | minimal theme with no background annotations       |
+| theme_linedraw() | black lines of various widths on white backgrounds |
+| theme_light()    | light grey lines and axes                          |
+
+
+ 6. **scales** map values in the data space to values in the aesthetic space (color, size, labels, ...) and are reported on the plot using axes and legends.
+
+| Scale                                      | Description                                  |
+|--------------------------------------------|----------------------------------------------|
+| scale_shape_discrete()                     | shape scale with discrete values             |
+| scale_x_log10(), scale_y_log10()           | Log-transform x or y axis                    |
+| scale_x_sqrt(), scale_y_sqrt()             | Square root transformation of x or y axis    |
+| scale_trans(x, y)                          | Possible values: "log2", "log10", "sqrt",... |
+| scale_x_continuous(), scale_y_continuous() | minimal theme with no background annotations |
+| scale_x_reverse(), scale_y_reverse()       | reverse x or y coordinates                   |
+| scale_colour_discrete()                    | color scale with discrete value              |
+| scale_colour_grey()                        | grey colors used in the plot                 |
+| scale_color_brewer(palette)                | library(RColorBrewer) display.brewer.all()   |
+| scale_color_manual(values)                 | specify colors to be used manually           |
+
+
+```{r}
+library(ggplot2)
+```
+
+(Default) densityplot:
+
+```{r}
+ggplot(Chicago.agg, aes(x = tripduration)) + 
+    geom_density()  
+```
+
+(Default) boxplot:
+
+```{r}
+ggplot(Chicago.agg, aes(x = events, y = tripduration)) + 
+    geom_boxplot()  
+```
+
+(Default) scatterplot
+
+```{r}
+ggplot(Chicago.agg, aes(x = temperature, y = tripduration)) + 
+    geom_point()  
+```
+
+## Customizations
+
+Change outlier (color, shape and size)
+```{r}
+p <- ggplot(Chicago.agg, aes(x = events, y = tripduration)) + 
+  geom_boxplot(outlier.colour = "red", outlier.shape = 8, outlier.size = 4) 
+p
+```
+
+Add coordiante system flip (rotate the boxes)
+
+```{r}
+p + coord_flip()    
+```
+
+Change box plot line colors by groups, add scale labels and plot title
+```{r}
+p <- ggplot(Chicago.agg, aes(x = events, y = tripduration, color = events)) +
+  geom_boxplot() +
+  labs(title = "Boxplot", x = "Events", y = "Tripduration")  
+p
+```
+
+Add box line colors by groups using brewer color palettes
+```{r}
+p + scale_color_brewer(palette = "Dark2")  
+```
+
