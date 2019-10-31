@@ -17,13 +17,14 @@ Data visualisation is an important tool for generating and communicating insight
 * Require changing graph titles, axis, labels, colors, symbols, adding legends, ... or adding information.
 
 R includes at least three graphical systems: 
-(1) the **standard graphics** package, 
-(2) the **lattice** package for Trellis graphs and 
-(3) the **ggplot2** package based on the idea of the grammar-of-graphics.
+
+1. the **standard graphics** package, 
+2. the **lattice** package for Trellis graphs and 
+3. the **ggplot2** package based on the idea of the grammar-of-graphics.
 
 <br>
 
 In R graphs are build-up in two stages by successively calling graph functions:
 
-(1) Creating an (**exploratory**) default graph.
-(2) **Customizing** and **annotating** the default graph. 
+1. Creating an (**exploratory**) default graph.
+2. **Customizing** and **annotating** the default graph. 
