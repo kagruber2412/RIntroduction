@@ -63,7 +63,7 @@ plot(tripduration ~ temperature, data = Chicago.agg)
 
 ## How to select among different graph types?
 
-![](./Ressources/Plot_Types.png)
+<img src="./Ressources/Plot_Types.png" width="300" height="300" style="margin: 0px 50px">
 
 # Illustrative graphs
 
