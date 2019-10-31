@@ -492,6 +492,7 @@ ggplot(Chicago.agg, aes(x = temperature, y = tripduration)) +
 ## Customizations
 
 Change outlier (color, shape and size)
+
 ```{r}
 p <- ggplot(Chicago.agg, aes(x = events, y = tripduration)) + 
   geom_boxplot(outlier.colour = "red", outlier.shape = 8, outlier.size = 4) 
