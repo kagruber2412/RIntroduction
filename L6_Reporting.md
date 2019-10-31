@@ -14,15 +14,15 @@ RMarkdwon is a file format for designing documents that allow to combine code, r
 
 RMarkdown documents rely on three different frameworks:
 
-> 1. **YAML** for render parameters
+1. **YAML** for render parameters
 
-> 2. **knitr** for embedded R code
+2. **knitr** for embedded R code
 
-> 3. **markdown** for formatted text
+3. **markdown** for formatted text
 
-* Reports are fully reproducible (although code is not necessarily displayed).
+> Reports are fully reproducible (although code is not necessarily displayed).
 
-* Reports can be updated automatically with `knitr` (time saving, e.g. when placing figures and tables).
+> Reports can be updated automatically with `knitr` (time saving, e.g. when placing figures and tables).
 
 **NOTE!** The necessary add-on packages (`rmarkdown` and `knitr`) are automatically installed in your R package library when installing RStudio. But RStudio does not build PDF and Word documents from scratch. You will need to have Microsoft Word (or a similar program) installed to produce Word Files. For rendering pdf files you will also need a **TeX** distribution (**miktex** for windows https://miktex.org/download, **mactex** for mac https://tug.org/mactex/mactex-download.html).
 
