@@ -28,3 +28,40 @@ In R graphs are build-up in two stages by successively calling graph functions:
 
 1. Creating an (**exploratory**) default graph.
 2. **Customizing** and **annotating** the default graph. 
+
+<br>
+
+# Exploratory graphs
+
+**Example**: _Bike sharing Chicago_.
+
+www.divvybikes.com covers information about 9.5 Million bike trips in Chicago. The data set is available in an aggregated version as `Chicago.agg.csv`.
+
+```{r}
+Chicago.agg <- read.csv("Chicago.agg.csv")
+```
+
+```{r}
+str(Chicago.agg)
+```
+
+(Default) histogramm:
+
+```{r}
+hist(Chicago.agg$tripduration)
+```
+
+(Default) boxplot:
+
+```{r}
+boxplot(tripduration ~ events, data = Chicago.agg)
+```
+
+(Default) scatterplot:
+
+```{r}
+plot(tripduration ~ temperature, data = Chicago.agg)
+```
+
+## How to select among different graph types?
+
