@@ -2,7 +2,13 @@
 
 _Step 1:_ Click on the **import** dataset button in the top-right section under the **environment tab**. Choose **From Text (base R)** and select the file you want to import. Next, the import dataset dialog will appear as in the example shown below:
 
+![](./Ressources/ReadCSV1.png)
+![](./Ressources/ReadCSV2.png)
+![](./Ressources/ReadCSV3.png)
+
 _Step 2:_ Set up the preferences of separator, name and other parameters, click on the **import** button. The dataset will be imported in R Studio and assigned to the variable name as set before.
+
+![](./Ressources/ReadCSV4.png)
 
 **Headings**:
 
@@ -22,7 +28,13 @@ the sample unit).
 
 * The Decimal field allows you to specify the character for the decimal mark. 
 
+![](./Ressources/ReadCSV5.png)
 
 # Option 2: The `readr` package
 
+![](./Ressources/ReadCSV6.png)
+![](./Ressources/ReadCSV7.png)
+![](./Ressources/ReadCSV8.png)
+![](./Ressources/ReadCSV9.png)
+![](./Ressources/ReadCSV10.png)
 
