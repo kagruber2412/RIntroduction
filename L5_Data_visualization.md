@@ -100,7 +100,7 @@ plot(customers ~ temperature, main = "Chicago bike trips",
      data = data)
 ```
 
-The size of text is specified in "points". The `cex` argument controls the font size by specifying a multiplicate modifier (**character expansion** factor = `fontsize` * `cex`).
+The font size of text is specified in "points" (pt). The `cex` argument controls the font size by specifying a multiplicate modifier (**character expansion** factor = `fontsize` * `cex`).
 
 * Change the **plotting symbol** with `pch`:
 
