@@ -29,3 +29,133 @@ RMarkdown documents rely on three different frameworks:
 **NOTE!** The necessary add-on packages (`rmarkdown` and `knitr`) are automatically installed in your R package library when installing RStudio. But RStudio does not build PDF and Word documents from scratch. You will need to have Microsoft Word (or a similar program) installed to produce Word Files. For rendering pdf files you will also need a **TeX** distribution (**miktex** for windows https://miktex.org/download, **mactex** for mac https://tug.org/mactex/mactex-download.html).
 
 # Getting started
+
+A template RMarkdown script is provided. 
+
+
+## 1. YAML for render parameters
+
+The YAML header (at the top of the page in between two lines of three dashes) includes the set up information used by `knitr` during rendering to produce the file:
+
+Selection of available document output formats:
+
+| Format | Document | Presentation |
+|--------|----------------|--------------------------|
+| HTML | `html_document` | `ioslides_presentation`, `xaringan`, `reveal.js` |
+| PDF | `pdf_document` | `beamer_presentation` |
+| Word | `word_document` | `powerpoint_presentation` |
+
+* A **table of contents** can be added with the `toc` option. The depth of headers that it applies to is specified with the `toc\_depth` option:
+
+~~~~
+---
+title: "My first document"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+---
+~~~~
+
+If the table of contents depth is not explicitly specified, it defaults to 3 (meaning that all level 1, 2, and 3 headers will be included in the table of contents).
+
+* **Section numberings** can be added to the headers eith the `number\_sections` option:
+
+~~~~
+---
+title: "My first document"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+---
+~~~~
+
+* **Width** and **height** of graphical output can be controlled (for example) with the `fig\_width` and `fig\_height` options:
+
+~~~~
+---
+title: "My first document"
+output:
+  pdf_document:
+    fig_width: 7
+    fig_height: 6
+---
+~~~~
+
+* Enhance the default display of **data frames** (output) with the `df\_print` option:
+
+~~~~
+---
+title: "My first document"
+output:
+  pdf_document:
+    df_print: kable
+---
+~~~~
+
+* Change the **syntax highlighting** style:
+
+~~~~
+---
+title: "My first document"
+output:
+  pdf_document:
+    highlight: tango
+---
+~~~~
+
+Available highlighting styles are: default, tango, pygments, kate, monochrone, espresso, zenburn, haddock, null (prevents syntax highlighting).
+
+* Further customizations of the template to create the PDF document:
+
+~~~~
+---
+title: "My first document"
+output: 
+  pdf_document:
+    fontsize: 11pt
+---
+~~~~
+
+| Setting | Description |
+|---------------------------------|--------------------------------------------------|
+| `fontsize` | Font size (e.g., 10pt, 11pt, or 12pt) |
+| `documentclass` | LaTeX document class (e.g., `article`) |
+| `classoption` | Options for documentclass (e.g., `oneside`) |
+| `geometry` | Options for geometry class (e.g., `margin=1in`) |
+| `linkcolor`, `urlcolor`,  `citecolor` | Color for internal, external, and citation links |
+
+
+## 2. Markdown formatted text
+
+Markdown is a set of very easy-to-read conventions for formatting plain text:
+
+* bold and italic text
+
+* ordered and unordered lists
+
+* headers (section titles)
+
+* hyperlinks...
+
+<br>
+
+**Markdown reference guide**: 
+
+Toolbar > **Help** > **Markdown Quick Reference** 
+
+<br>
+
+## Mathematical expressions
+
+* **Inline** mathematical expressions can be written in a pair of dollar signs using the LaTeX syntax (see e.g. https://www.overleaf.com/learn/latex/Mathematical_expressions):
+
+~~~~~
+$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$
+~~~~~
+
+The output looks like: $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$.
+
+
+* **Display style** mathematical expressions can be written in a pair of double dollar signs:
