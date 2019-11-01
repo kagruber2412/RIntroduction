@@ -62,6 +62,7 @@ boxplot(tripduration ~ events, data = Chicago.agg)
 ```{r}
 plot(tripduration ~ temperature, data = Chicago.agg)
 ```
+<br>
 
 ## How to select among different graph types?
 
@@ -69,9 +70,13 @@ plot(tripduration ~ temperature, data = Chicago.agg)
 <img src="./Ressources/Plot_Types.png" width="425" height="400" style="margin: 0px 50px">
 </p>
 
+<br>
+
 # Illustrative graphs
 
 The final graph should help others to quickly built up a good mental model of the data and the business problem at hand. Therefore, it is necessary to change different aspects of the appearance of a plot (**customizations**) as well as to add extra information (**annotations**). 
+
+<br>
 
 ## Customizations
 
@@ -197,6 +202,8 @@ par(old.par)        # switch back to default settings
 
 If the setting is made via `mfcol`, figure regions are used by column instead of by row.
 
+<br>
+
 ## Annotations
 
 Sometimes it is not enough to just modify the default graphic output. In many situations, further graphical output needs to be added to achieve the desired result.
@@ -250,7 +257,6 @@ rgb2hsv(c(255,0,0))
 An alternative way to provide an RGB color specification is to provide a string of the form `"#RRGGBB"`, where each of the pairs RR, GG, BB consist of two **hexadecimal** digits giving a value in the range zero (00) to 255 (FF). In this specification, the color red is given as `"#FF0000"`.
 
 **NOTE!** In R all color models translate to hex!
-
 
 **Color sets**: More than one color is often required within a single plot and in such cases it can be difficult to select colors that are aesthetically pleasing or are related in some way (e.g., a set of colors in which the brightness of the colors decreases in regular steps). 
 
@@ -429,6 +435,7 @@ legend("topleft", c("no. of customers", "temperature"),
 
 **NOTE!** It is entirely the responsibility of the user to ensure that the legend corresponds to the plot. There is no automatic checking that data symbols in the legend match those in the plot, or that the labels in the legend have any correspondence with the data.
 
+<br>
 
 # `ggplot` and the grammer of graphics
 
@@ -506,6 +513,8 @@ ggplot(Chicago.agg, aes(x = events, y = tripduration)) +
 ggplot(Chicago.agg, aes(x = temperature, y = tripduration)) + 
     geom_point()  
 ```
+
+<br>
 
 ## Customizations
 
