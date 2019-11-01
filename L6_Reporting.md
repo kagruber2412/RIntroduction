@@ -1,5 +1,7 @@
 # The data science process
 
+<img src="./Ressources/DataScienceProcess_Reports.png" width="1225" height="300" style="margin: 0px 50px">
+
 It doesn’t matter how great your analysis is unless you can explain it to others: you need to **communicate** your results!
 
 * Communicating to **decision makers**, who want to focus on the conclusions and not the code behind the analysis.
