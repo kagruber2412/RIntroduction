@@ -35,9 +35,11 @@ RMarkdown documents rely on three different frameworks:
 # Getting started
 
 ![](./Ressources/RMarkdown_1.png)
+
 <p align="center">
-<img src="/Ressources/RMarkdown_2.png" width="625" height="625" style="margin: 0px 50px">
+<img src="/Ressources/RMarkdown_2.png" width="625" height="425" style="margin: 0px 50px">
 </p>
+
 ![](./Ressources/RMarkdown_3.png)
 
 A template RMarkdown script is provided. 
