@@ -1,5 +1,5 @@
-# R Introduction
+# Programming for Data Science and Marketing Analytics
 
-Here you find the materials I used for some workshops on introduction to statistical programming with R. The chapters entail a collection of exercises I considered as helpful to obtain coding skills in R. All contributions, bug fixes, comments,... are welcome!
+Here you find the materials I used for the introductory programming course in the **Data Science and Marketing Analytics** programme at EUR. All contributions, bug fixes, comments,... are welcome! 
 
-(P.S.: I'm sorry that i do not have a proper landing page yet.)
+
