@@ -34,9 +34,11 @@ RMarkdown documents rely on three different frameworks:
 
 # Getting started
 
+<p align="center">
 ![](./Ressources/RMarkdown_1.png)
-![](./Ressources/RMarkdown_2.png)
+<img src="/Ressources/RMarkdown_2.png" width="625" height="300" style="margin: 0px 50px">
 ![](./Ressources/RMarkdown_3.png)
+</p>
 
 A template RMarkdown script is provided. 
 
@@ -46,7 +48,7 @@ A template RMarkdown script is provided.
 
 The YAML header (at the top of the page in between two lines of three dashes) includes the set up information used by `knitr` during rendering to produce the file:
 
-![](./Ressources/RMarkdown4.png)
+![](./Ressources/RMarkdown_4.png)
 
 Selection of available document output formats:
 
