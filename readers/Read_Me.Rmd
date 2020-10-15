@@ -1,0 +1,1 @@
+Here are all the readers i've written for the data science and marketing analytics programming class.
