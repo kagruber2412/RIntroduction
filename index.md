@@ -4,12 +4,12 @@ layout: template
 filename: index
 --- 
 
-# patrickandfrantonarethebestninjas
+# Introduction to R
 
-## Created by [Patrick Huston](http://www.patrickhuston.com/) and [Franton Lin](frantonlin.com)
+## blablabla
 
-#### What is patrickandfrantonarethebestninjas?
-This project aims to demonstrate without a doubt why Patrick and Franton are the best ninjas. 
+#### blablabla?
+blablablablablablablablablablablablablablablablablablablablabla
 
-#### How can I use patrickandfrantonarethebestninjas?
-Come to office hours and git tutorials. Baked goods and cash are also accepted.
+#### blablablablablabla?
+blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
