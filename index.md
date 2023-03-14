@@ -4,12 +4,7 @@ layout: template
 filename: index
 --- 
 
-# Introduction to R
 
-## blablabla
+# Welkom to the introduction to R
 
-#### blablabla?
-blablablablablablablablablablablablablablablablablablablablabla
-
-#### blablablablablabla?
-blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
+## Created by Jeroen van Druten
