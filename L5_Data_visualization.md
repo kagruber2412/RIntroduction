@@ -437,7 +437,7 @@ legend("topleft", c("no. of customers", "temperature"),
 
 <br>
 
-# `ggplot` and the grammer of graphics
+# `ggplot` and the grammar of graphics
 
 (R for Data Science, Chapter 1 \& 22, or https://r4ds.had.co.nz/data-visualisation.html \& https://r4ds.had.co.nz/graphics-for-communication.html Chapter 1.3 \& 5.28)
 
